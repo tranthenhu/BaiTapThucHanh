@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tienvay = parseInt(prompt("nhap tien vay ban dau",""));
+    var thangvay = parseInt(prompt("nhap so thang vay",""));
+    tiengoctrahangthang = tienvay/thangvay;
+    i = 0;
+    for (i=0 ; i<thangvay ; i++)
+    {
+        tienphaitra = ((tienvay/100)*10)+tiengoctrahangthang;
+        tienvay = tienvay-tiengoctrahangthang;
+        document.write("tienphai tra" + tienphaitra);
+    }
+</script>
+</body>
+</html>

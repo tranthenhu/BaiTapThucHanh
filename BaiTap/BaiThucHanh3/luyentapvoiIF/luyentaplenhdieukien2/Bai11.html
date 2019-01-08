@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var tienluong = parseInt(prompt("nhap vao tien luong",""));
+    if (tienluong<10000) {
+       tienthue = (tienluong/100)*5;
+    } else if (tienluong<15000) {
+        tienthue = (tienluong/100)*9;
+    }else if (tienluong<20000) {
+        tienthue = (tienluong/100)*13;
+    }else if (tienluong<30000) {
+        tienthue = (tienluong/100)*15;
+    } else {
+        tienthue = (tienluong/100)*18;
+    }
+    alert("tien thue ca nhan" + tienthue);
+</script>
+</body>
+</html>

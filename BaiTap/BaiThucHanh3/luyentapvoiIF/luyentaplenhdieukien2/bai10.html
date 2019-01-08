@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var chudien = parseInt(prompt("nhap vao chu dien",""));
+    var giadien = parseInt(prompt("nhap gia dien hien tai",""));
+    if (chudien>100) {
+        tienphat = ((chudien*giadien)/100)*5;
+    } else if (chudien<200){
+           tienphat = ((chudien*giadien)/100)*15;
+    } else if (chudien<500){
+        tienphat = ((chudien*giadien)/100)*20;
+    }  else {
+        tienphat = ((chudien*giadien)/100)*30;
+    }
+    tiendien = (chudien*giadien)+tienphat;
+    alert("tien dien thang nay la" + tiendien)
+</script>
+
+</body>
+</html>
