@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table style="width:40%">
+  <tr>
+    <th align="left">Amount</th>
+    <th align="left">From Currency</th>
+    <th align="left">To Currency</th>
+  </tr>
+  <tr>
+    <td><input id="amount"></td>
+    <td><select id="from">
+      <option value="23000">Viet Nam</option>
+      <option value="1">USD</option>
+    </select></td>
+    <td>
+      <select id="tocur">
+        <option value="1">USD</option>
+        <option value="23000">Viet Nam</option>
+      </select>
+    </td>
+    <td>
+      <button onclick="convert()">Convert</button>
+    </td>
+  </tr>
+  <tr><th id="rs"></th></tr>
+</table>
+<script>
+function convert() {
+  var a = parseInt(document.getElementById("amount").value);
+    var b = document.getElementById("from").value/document.getElementById("tocur").value;
+  var c = a*b;
+  document.getElementById("rs").textContent = "Result: " + c;
+}
+</script>
+</body>
+</html>
