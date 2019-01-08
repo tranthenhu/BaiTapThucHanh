@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var diemkiemtra = parseInt(prompt("nhap diem kiem tra: ",""));
+    var diemgiuaky = parseInt(prompt("nhap diem giua ky: ",""));
+    var diemcuoiky = parseInt(prompt("nhap diem cuoi ky: ",""));
+    var tongket = ((diemkiemtra+(diemgiuaky*2)+(diemcuoiky*3))/6);
+    if (tongket<3) {
+        alert("hoc luc yeu");
+    } else if (tongket<6) {
+        alert("hoc luc trung binh");
+    }  else if (tongket<8) {
+        alert("hoc luc kha");
+    } else {
+        alert("hoc luc gioi");
+    }
+</script>
+</body>
+</html>
