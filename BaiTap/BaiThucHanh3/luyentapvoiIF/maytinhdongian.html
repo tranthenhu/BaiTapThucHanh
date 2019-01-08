@@ -9,32 +9,32 @@
     <tr>
         <th align="center">CACULATOR</th>
     </tr>
-        <td><input id="pt1" height="50"></td>
+        <td colspan="4"><input id="result"></td>
     </tr>
 </table>
 <br>
-<button onclick="num1" style="height: 40px;width: 40px" value="1">1</button>
-<button onclick="num2" style="height: 40px;width: 40px" value="2">2</button>
-<button onclick="num3" style="height: 40px;width: 40px" value="3">3</button>
-<button onclick="cong" style="height: 40px;width: 40px">+</button>
+<button style="height: 40px;width: 40px" value="1" onclick="result.value+=this.value">1</button>
+<button style="height: 40px;width: 40px" value="2" onclick="result.value+=this.value">2</button>
+<button style="height: 40px;width: 40px" value="3" onclick="result.value+=this.value">3</button>
+<button style="height: 40px;width: 40px" value="+" onclick="result.value+=this.value">+</button>
 </br>
 <br>
-<button onclick="num4" style="height: 40px;width: 40px" value="4">4</button>
-<button onclick="num5" style="height: 40px;width: 40px"value="5">5</button>
-<button onclick="num6" style="height: 40px;width: 40px"value="6">6</button>
-<button onclick="tru" style="height: 40px;width: 40px">-</button>
+<button style="height: 40px;width: 40px" value="4" onclick="result.value+=this.value">4</button>
+<button style="height: 40px;width: 40px" value="5" onclick="result.value+=this.value">5</button>
+<button style="height: 40px;width: 40px" value="6" onclick="result.value+=this.value">6</button>
+<button style="height: 40px;width: 40px" value="-" onclick="result.value+=this.value">-</button>
 </br>
 <br>
-<button onclick="num7" style="height: 40px;width: 40px"value="7">7</button>
-<button onclick="num8" style="height: 40px;width: 40px"value="8">8</button>
-<button onclick="num9" style="height: 40px;width: 40px"value="9">9</button>
-<button onclick="nhan" style="height: 40px;width: 40px">*</button>
+<button style="height: 40px;width: 40px"value="7" onclick="result.value+=this.value">7</button>
+<button style="height: 40px;width: 40px"value="8" onclick="result.value+=this.value">8</button>
+<button style="height: 40px;width: 40px"value="9" onclick="result.value+=this.value">9</button>
+<button style="height: 40px;width: 40px"value="*" onclick="result.value+=this.value">*</button>
 </br>
 <br>
-<button onclick="C" style="height: 40px;width: 40px">C</button>
-<button onclick="num0" style="height: 40px;width: 40px"value="0">0</button>
-<button onclick="bang" style="height: 40px;width: 40px">=</button>
-<button onclick="chia" style="height: 40px;width: 40px">/</button>
+<button style="height: 40px;width: 40px"value="C" onclick="result.value=''">C</button>
+<button style="height: 40px;width: 40px"value="0" onclick="result.value+=this.value">0</button>
+<button style="height: 40px;width: 40px"value="=" onclick="result.value=eval(result.value)">=</button>
+<button style="height: 40px;width: 40px"value="/" onclick="result.value+=this.value">/</button>
 </br>
 
 </body>
