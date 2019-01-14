@@ -10,11 +10,11 @@
     var thangvay = parseInt(prompt("nhap so thang vay",""));
     tiengoctrahangthang = tienvay/thangvay;
     i = 0;
-    for (i=0 ; i<thangvay ; i++)
+    for (i=0 ; i<=thangvay ; i++)
     {
         tienphaitra = ((tienvay/100)*10)+tiengoctrahangthang;
         tienvay = tienvay-tiengoctrahangthang;
-        document.write("tienphai tra" + tienphaitra);
+        document.write("<p>tienphai tra :</p>" + tienphaitra);
     }
 </script>
 </body>

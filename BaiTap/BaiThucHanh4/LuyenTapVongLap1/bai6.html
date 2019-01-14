@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img id="img1" src="../../img/1.png" onclick="a1()"/>
+<img id="img2" src="../../img/3.png" onclick="a2()"/>
+<img id="img3" src="../../img/2.png" onclick="a3()"/>
+<script>
+    function a1() {
+        var randomnum;
+        randomnum = Math.floor(Math.random() * 4) + 1;
+        console.log(randomnum);
+        switch (randomnum) {
+            case 1 :
+            document.getElementById("img1").src = "D:\codegym\BaiTap\img\1.png";
+                break;
+            case 2:
+
+                break;
+        }
+    }
+
+</script>
+</body>
+</html>
