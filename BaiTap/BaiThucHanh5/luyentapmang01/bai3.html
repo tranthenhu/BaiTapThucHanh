@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var mangso = parseInt(prompt(""));
+    var array = mangso.toString();
+    var max = 0;
+    var sum = 0;
+    for (var i=0; i<array.length ;i++) {
+        if (array[i] > max ) {
+            max = array[i];
+
+        }    sum += parseInt(array[i]);
+    }
+    var TB = sum / array.length;
+    document.write("max la: " + max + " gia tri trung binh: " + TB);
+</script>
+</body>
+</html>

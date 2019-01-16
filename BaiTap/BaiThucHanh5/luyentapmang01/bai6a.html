@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = prompt("chieu dai mang","");
+    var Ar = Array();
+    var a = 0;
+    for (var j =0 ; j <n ; j++) {
+        a =  prompt("nhap so thu " + j + "");
+        Ar.push(a);
+    }
+    document.write(Ar + "<br/>");
+    var a = "-" ;
+    var b = "_" ;
+    for (var i = 0 ; i < n ; i++) {
+        if (Ar[i] === a) {
+            Ar[i] = b ;
+        }
+    }  document.write(Ar.join(""));
+</script>
+</body>
+</html>
+
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type='text' id="word" value=''>
+<button id='press' onclick='search()' value='find'>Tìm kiếm</button>
+<p id="hienthi"></p>
+<script>
+    var english= ['nonetheless','practice','affect','approach','raise'];
+    var vietnamese= ['dù sao','luyện tập','ảnh hưởng','tiếp cận','nâng lên'];
+    function search() {
+        var input = document.getElementById('word').value;
+        console.log(input);
+        for (Eng = 0; Eng < english.length; Eng++) {
+            if (input === english[Eng]) {
+                document.getElementById("hienthi").innerHTML= vietnamese[Eng];
+            }
+        }
+    }
+</script>
+</body>
+</html>-->

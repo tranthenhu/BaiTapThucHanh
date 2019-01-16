@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input id="input">
+<button onclick="click()">trans</button>
+<th id="result"></th>
+<script>
+ /*   var vn = [];
+    var eng = [];*/
+    function click() {
+        var text = document.getElementById("input");
+         document.write(text);
+     /*   for (var i = 0; i < vn.length; i++) {
+            if (vn[i] = )
+                }*/
+    }
+
+/*mang tuy bien 2 chieu*/
+/* var hang = parseInt(prompt("DO DAI HANG",""));
+ var cot = parseInt(prompt("DO DAI COT",""));
+ var Ar = [[],[]];
+ var a = 0;
+ for (var i =0 ; i < hang ; i++) {
+     for ( var j =0 ; j < cot ; j++ ) {
+         a =  parseInt(prompt("nhap so thu " + i + j ,""));
+         Ar[i][j] = a;
+
+     }
+ } console.log(Ar);
+ for (var i =0 ; i < hang ; i++) {
+     for (var j = 0; j < cot; j++) {
+         document.write(Ar[i][j] + "<br/>");
+     }
+ }*/
+ var n = prompt("chieu dai mang",""));
+ var Ar = Array();
+ var Ar2
+ var a = 0;
+ for (var j =0 ; j <n ; j++) {
+     a =  prompt("nhap so thu " + j + ""));
+     Ar.push(a);
+ }
+ document.write(Ar + "<br/>");
+
+</script>
+</body>
+</html>

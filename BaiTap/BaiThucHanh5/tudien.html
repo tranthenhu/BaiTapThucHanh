@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var a = prompt("");
+    var str = a.toString();
+    var up = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    var str2 = up.toString();
+    var str3 ;
+    for (var i = 0 ; i < str2.length ; i++) {
+        for (var j = 0; j < str.length; j++) {
+            if (str2[i] === str[j]) {
+               str3 += str[i].toLowerCase() ;
+
+            } else {
+                str3 += str[i].toUpperCase();
+            }
+            }
+        }  document.write(str3)
+
+</script>
+</body>
+</html>
