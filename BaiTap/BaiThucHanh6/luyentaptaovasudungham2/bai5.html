@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var Ar = Array();
+    var a = 0;
+        for (var j =0 ; j <3 ; j++) {
+            a =  parseInt(prompt("nhap so thu " + j + ""));
+            Ar.push(a);
+        }
+        document.write(Ar + "<br/>");
+    function min() {
+            if (Ar[0] < Ar[1] && Ar[0] < Ar[2]) {
+                 min = Ar[0];
+                 alert(Ar[0] + " nho nhat");
+            } else if ( Ar[1] < Ar[2]) {
+                alert(Ar[1] + " nho nhat");
+                 } else { alert(Ar[2] + " nho nhat");
+            }
+    }
+    min();
+
+</script>
+</body>
+</html>

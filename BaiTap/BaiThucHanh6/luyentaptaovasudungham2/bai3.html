@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var n = parseInt(prompt("nhap so can tinh"));
+  function tinhgiaithua(n) {
+        var giaithua = 1;
+            for(var i = 1; i <= n; i++) {
+              giaithua = giaithua * i;
+        }
+       document.write("giai thua cua " + n + " la " + giaithua);
+        return 0;
+    }
+    tinhgiaithua(n);
+</script>
+</body>
+</html>

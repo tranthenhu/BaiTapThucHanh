@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function taomang() {
+        var n = prompt("chieu dai mang", "");
+        var Ar = Array();
+        var a = 0;
+        for (var j = 0; j < n; j++) {
+            a = prompt("nhap so thu " + j + "");
+            Ar.push(a);
+        }
+        document.write(Ar + "<br/>");
+       var  b = prompt("nhap ki tu bat ki");
+       var dem = 0;
+       for (var i = 0 ; i < Ar.length ; i++) {
+           if (Ar[i] === b) {
+               dem++;
+           }
+           }
+       if (dem !== 0 ){
+           document.write("ki tu co trong mang va so lan xuat hien la: " + dem);
+       } else { document.write("ki tu k co trong mang");
+       }
+    }
+    taomang()
+</script>
+</body>
+</html>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<p>
+    <label>Feet</label>
+    <input id="inputfeet" type="number" placeholder="Feet"
+           oninput="doidodai(this.value)"
+           onchange="doidodai(this.value)">
+</p>
+<p>Meters: <span id="outputmet"></span></p>
+<body>
+<script>
+    function doidodai(valNum) {
+        valNum = parseFloat(valNum);
+        document.getElementById("outputmet").innerHTML = valNum*0.305;
+    }
+</script>
+</body>
+</html>

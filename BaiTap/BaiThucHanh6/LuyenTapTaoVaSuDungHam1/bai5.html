@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array1 = ["Polaris","Aldebaran","Deneb","Vega","Altair","Dubhe"];
+    var array2 = ["UrsaMinor","Tarurus","Cygnus","Lyra","Aquila","UrsaMajor","Leo"];
+    var a = prompt("nhap ten ngoi sao","");
+    console.log(a);
+    function search() {
+        for (var i = 0; i < array1.length ; i++) {
+            if (a === array1[i]) {
+              alert(array2[i]);
+            }
+        }
+    }
+    search();
+</script>
+</body>
+</html>

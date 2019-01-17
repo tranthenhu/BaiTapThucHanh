@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function kiem_tra_snt(n) {
+        var dem = 0;
+        for ( var i = 1 ; i <= n ; i++){
+            if (n%i===0)
+                dem++;
+        } if (dem===2)
+            return 1;
+        else  return 0;
+    }
+    var c = parseInt(prompt("nhap c",""));
+    var dem = 0;
+    var i =2 ;
+    while (dem <c) {
+        if (kiem_tra_snt(i)) {
+            document.write("nguyen to: " + i + "<br/>");
+            dem++;
+        } i++;
+    }
+
+</script>
+</body>
+</html>
