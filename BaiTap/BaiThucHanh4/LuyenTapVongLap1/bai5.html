@@ -6,15 +6,26 @@
 </head>
 <body>
 <script>
-    var sum = 0;
-    var n = 0;
-    for (var i=0; i>=0 && n<=30 ;i++) {
-    if (i%7==0) {
-        sum =sum + i;
-        n++;
-        document.write("<p>" + i + "</p>");
+    var sum = 1;
+    for (var i=0; i<=20;i++) {
+        switch (i) {
+            case 0:
+                n1=i;
+                document.write("<p>"+ i + "</p>");
+                break;
+            case  1:
+                n2=i;
+                document.write("<p>" + i + "</p>");
+                break;
+            default :
+                n3 = n2 + n1;
+                n1 = n2;
+                n2 =n3;
+                sum += n3;
+                document.write("<p>" + n3 + "</p>");
+        }
     }
-    } document.write(sum);
+    document.write("<p>" + sum + "</p>");
 </script>
 </body>
 </html>

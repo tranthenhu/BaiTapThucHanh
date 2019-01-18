@@ -7,26 +7,29 @@
 <body>
 <script>
     var n = parseInt(prompt("chieu dai mang",""));
-    var Ar = Array();
+    var arr = Array();
     var a = 0;
     for (var j =0 ; j <n ; j++) {
         a =  parseInt(prompt("nhap so thu " + j + ""));
-        Ar.push(a);
+        arr.push(a);
     }
-    document.write(Ar + "<br/>");
-    function minArray(Ar) {
-        if(Ar.length == 0)
-            return -1;
-        var min = Ar[0];
 
-        for(var i = 1; i < Ar.length; i++){
-            if(Ar[i] < min){
-                min = Ar[i];
+    document.write(arr + "<br/>");
+
+    function minArray(arr) {
+        if(arr.length == 0)
+            return -1;
+        var min = arr[0];
+
+        for(var i = 1; i < arr.length; i++){
+            if(arr[i] < min){
+                min = arr[i];
             }
         }
         return min;
     }
-    var  b = minArray(Ar);
+
+    var  b = minArray(arr);
     document.write(b);
 </script>
 </body>

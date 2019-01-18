@@ -7,17 +7,19 @@
 <body>
 <script>
     function kiem_tra_snt(n) {
-    var dem = 0;
-    for ( var i = 1 ; i <= n ; i++){
-        if (n%i===0)
-            dem++;
-    } if (dem===2)
-        return 1;
-    else  return 0;
+        var dem = 0;
+        for (var i = 1 ; i <= n ; i++){
+            if (n%i === 0)
+                dem++;
+        }
+        if (dem === 2)
+            return 1;
+        else
+            return 0;
     }
-    for (var n = 0 ; n<=10000 ; n++ ) {
 
-        if (kiem_tra_snt(n)=== 1) {
+    for (var n = 0 ; n<=10000 ; n++ ) {
+        if (kiem_tra_snt(n) === 1) {
             document.write(n + "<br/>");
         }
     }
