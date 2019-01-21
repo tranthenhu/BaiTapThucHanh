@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+  /*  var Circle = function(radius) {
+        this.getRadius = function() {
+            return radius;
+        },
+        this.getArea = function() {
+            return Math.PI * radius * radius;
+        }};
+        var circle = new Circle(3);
+        var radius = circle.getRadius();
+
+        var area = circle.getArea();
+        alert("radius: " + radius + "; area: " + area);
+
+*/
+  var MyDate = function( S,V) {
+    var dai = parseInt(prompt(""));
+    var rong = parseInt(prompt(""));
+      this.S = S;
+      this.V = V;
+
+      this.getMonth = function() {
+          return this.month;
+      }
+      this.getYear = function() {
+          return this.year;
+      }
+      this.setDay = function(setday) {
+          this.day  = setday;
+      }
+      this.setMonth = function(setmonth) {
+          this.month  = setmonth;
+      }
+      this.setYear = function(setyear) {
+          this.year  = setyear;
+      }
+  };
+
+  var date = new MyDate(2, 2, 2007);
+  var day = date.getDay();
+  var month = date.getMonth();
+  var year = date.getYear();
+  alert(day + "/" + month + "/" + year);
+  date.setDay(10);
+  alert(date.getDay() + "/" + date.getMonth() + "/" + date.getYear());
+</script>
+
+</body>
+</html>
