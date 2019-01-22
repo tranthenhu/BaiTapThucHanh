@@ -7,23 +7,20 @@
 <body>
 <canvas id="chunhat" ></canvas>
 <script>
-function chunhat(x,y,S,V) {
-    this.x = x;
-    this.y = y;
-    this.S = dientich;
-    this.V = chuvi;
-}
-function vehinh() {
-var ctx = document.getElementById("chunhat").getContext("2d");
-var chunhat = new chunhat(500,500,80);
-    ctx.beginPath();
-    ctx.arc(circle.x, circle.y, circle.radius, 0, 2 * Math.PI);
-    ctx.fill();
-}
+var dai = parseInt(prompt(""));
+var rong = parseInt(prompt(""));
+var chunhat ={
+    chieudai : dai,
+    chieurong : rong,
+    S : "dientich: " + dai*rong,
+    V : "chu vi: " + (dai+rong) *2
 
-createCircle();
-
-vehinh();
+};
+    var c = document.getElementById("chunhat");
+    var ctx = c.getContext("2d");
+   ctx.fillRect(0,0,dai,rong);
+alert(chunhat.S);
+alert(chunhat.V);
 </script>
 </body>
 </html>
