@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function is_usZipCode(str) {
+        var regexp = /^[CAP]{1,}[0-9]{4}[GHIKLM]{1}$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    var zipcode = "C0318K";
+    alert(is_usZipCode(zipcode));
+</script>
+</body>
+</html>

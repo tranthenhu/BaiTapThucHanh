@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function is_usZipCode(str) {
+        var regexp = /^[_a-z0-9]{6,}$/;
+        if (regexp.test(str)) {
+            return true;
+        }
+        return false;
+    }
+    var zipcode = "1234_5";
+    alert(is_usZipCode(zipcode));
+
+</script>
+</body>
+</html>

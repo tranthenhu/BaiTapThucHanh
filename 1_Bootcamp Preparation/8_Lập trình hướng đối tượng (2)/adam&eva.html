@@ -79,26 +79,29 @@ var adam = new human("adam","nam",60);
     document.getElementById("weighteva").innerHTML = eva.weighthuman() + " kg";
     var tao = new apple(10,true);
     document.getElementById("weightconlai").innerHTML = "can nang con lai cua qua tao: " + tao.appleweight() + " kg";
+    var test = true;
     function adameat() {
-        if (tao.appleweight()> 0) {
+        if (tao.appleweight()> 0 && test === true) {
             adam.eat();
             tao.decrease();
             document.getElementById("weightadam").innerHTML = adam.weighthuman() + " kg";
             document.getElementById("weightconlai").innerHTML = "can nang con lai cua qua tao: " + tao.appleweight() + " kg";
             adam.voice();
+            test = false;
         } else {
-            alert("het tao ");
+            alert("k dc an 2 lan lien tuc hoac het tao ");
         }
     }
     function evaeat() {
-        if (tao.appleweight()> 0 ) {
+        if (tao.appleweight()> 0 && test === false) {
         eva.eat();
         tao.decrease();
         document.getElementById("weighteva").innerHTML = eva.weighthuman() + " kg";
         document.getElementById("weightconlai").innerHTML = "can nang con lai cua qua tao: " + tao.appleweight() + " kg";
         eva.voice();
+        test = true;
     } else {
-            alert("het tao");
+            alert("k dc an 2 lan lien tuc hoac het tao");
         }
     }
 </script>

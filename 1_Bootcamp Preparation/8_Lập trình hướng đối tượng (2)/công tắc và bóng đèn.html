@@ -5,7 +5,6 @@
     <title>Title</title>
 </head>
 <body>
-<p id="power" ></p>
 <input type="submit" id="onoff" value="on/off" onclick="onoff()">
 <input type="submit" id="noiday" value="noiday" onclick="noiday()">
 <script>
@@ -39,7 +38,7 @@
                 alert("den tat")
             }
         }
-        changedaystatus (){
+        changestatus (){
             if (this._status) {
                 this._status = false;
             } else  {
@@ -54,7 +53,7 @@
     }
     function onoff() {
         if (denpin.noidaystatus()) {
-            denpin.changedaystatus();
+            denpin.changestatus();
             denpin.statuslamp();
         } else {
             denpin.daystatus();
