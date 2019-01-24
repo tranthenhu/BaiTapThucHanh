@@ -4,16 +4,187 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<div    id="way"></div>
+<div    id="car" ></div>
+<div    id="tenor" ></div>
+<div    id="tenor1" ></div>
+<div    id="tenor2" ></div>
 <body>
 <script>
-    var array = [];
-    for (var i = 0; i<10 ; i++) {
-        array[i] = [];
-        for (var j = 0; j < 10; j++) {
-            array[i][j] = i * j;
+    var a =1;
+    var b =1;
+    var c =1;
+    class Image {
+        constructor(image, top, left, size, spees) {
+            this.image = image;
+            this.top = top;
+            this.left = left;
+            this.size = size;
+            this.spees = spees;
 
         }
-    } console.log(array);
+        getimage(){
+            return '<img width="'+ this.size + '"' +' height="'+ this.size + '"' +
+                ' src="' + this.image +'"' +
+                ' style="top: '+this.top+'px; left:'+this.left+'px; px;position:absolute;" />';
+        }
+        getleft() {
+            if (this.left >100) {
+                this.left -= 160;
+            }
+                return this.left;
+
+        }
+        getright(){
+            if (this.left <420) {
+                this.left += 160;
+            }
+            return this.left;
+        }
+        gettop(){
+            return this.top;
+        }
+        getsize(){
+            this.size = 0;
+            return this.size;
+        }
+        getagain(){
+            this.top = 320;
+            this.left = 290;
+            this.size = 10;
+        }
+        getagain1() {
+            this.top = 320;
+            this.left = 303;
+            this.size = 10;
+        }
+        getagain2() {
+            this.top = 320;
+            this.left = 315;
+            this.size = 10;
+        }
+        movedown1(){
+                this.top += 5;
+                this.left -= 5;
+                this.size += 2;
+        }
+        movedown2(){
+            this.top += 5;
+            this.left -= 1;
+            this.size += 2;
+        }
+        movedown3(){
+            this.top += 5;
+            this.left += 3;
+            this.size += 2;
+        }
+    }
+    
+    
+    var way = new Image("giphy.gif",0,0,600);
+      document.getElementById('way').innerHTML =  way.getimage();
+    var car = new Image("513063667051528214.gif",500,260,100);
+      document.getElementById('car').innerHTML =  car.getimage();
+
+    var tenor = new Image("423873894810779659.gif",320,290,10);
+    var tenor1 = new Image("423873894810779659.gif",320,303,10);
+    var tenor2 = new Image("423873894810779659.gif",320,315,10);
+
+
+    addEventListener("keydown", function(event) {
+        var k = event.keyCode;
+        var move = 0;
+        switch (k) {
+            case 37:
+                   move = car.getleft();
+                   document.getElementById('car').innerHTML = car.getimage(move);
+                break;
+            case 39:
+                move = car.getright();
+                document.getElementById('car').innerHTML =  car.getimage(move);
+                break;
+        }
+
+    });
+
+
+function move1() {
+    var size0 = 0;
+ if (tenor.gettop() <530 ) {
+        tenor.movedown1();
+        setTimeout(move1, 30);
+        document.getElementById("tenor").innerHTML = tenor.getimage();
+      } else {
+         size0 = tenor.getsize();
+         document.getElementById("tenor").innerHTML = tenor.getimage(size0);
+         tenor.getagain();
+    }
+}
+
+    function move2() {
+        var size0 = 0;
+        if (tenor1.gettop() <530 ) {
+            tenor1.movedown2();
+            setTimeout(move2, 30);
+            document.getElementById("tenor1").innerHTML = tenor1.getimage();
+        } else {
+            size0 = tenor1.getsize();
+            document.getElementById("tenor1").innerHTML = tenor1.getimage(size0);
+            tenor1.getagain1();
+        }
+    }
+
+    function move3() {
+        var size0 = 0;
+        if (tenor2.gettop() <530 ) {
+            tenor2.movedown3();
+            setTimeout(move3, 30);
+            document.getElementById("tenor2").innerHTML = tenor2.getimage();
+        } else {
+            size0 = tenor2.getsize();
+            document.getElementById("tenor2").innerHTML = tenor2.getimage(size0);
+            tenor2.getagain2();
+        }
+    }
+function time() {
+    a = Math.floor((Math.random() * 10) + 1);
+    b = Math.floor((Math.random() * 10) + 1);
+    c = Math.floor((Math.random() * 10) + 1);
+}
+    setTimeout(time,2000);
+    setInterval(move1,a * 1000);
+    setInterval(move2,b * 1000);
+    setInterval(move3,c * 1000);
+    console.log(a);
+    console.log(b);
+    console.log(c);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /*  var random = Math.floor((Math.random()*6)+1);
+    console.log(random);*/
+  /*  function moveRight(){
+        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    }
+    animate = setTimeout(moveRight,20);
+    function stop(){
+        clearTimeout(animate); imgObj.style.left = '0px';
+*/
+
 </script>
 </body>
 </html>

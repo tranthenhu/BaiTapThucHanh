@@ -26,19 +26,19 @@
 
         }
         kiemTra(){
-            if(hero.left <  1300 -hero.size && hero.top ==0){
+            if(this.left <  1300 -this.size && this.top ==0){
                 this.left +=100;
                 console.log('ok: ' + this.left);
             }
-            else if( hero.top < 500 && hero.left >= 1300 -hero.size){
+            else if( this.top < 500 && this.left >= 1300 -this.size){
                 this.top +=100;
                 console.log('ok1: ' + this.top + "left1" + this.left);
 
-            }else if(hero.left > 0 && hero.top >=500){
+            }else if(this.left > 0 && this.top >=500){
                 this.left -=100;
                 console.log('ok2: ' + this.top + "left1" + this.left);
             }
-            else if(hero.left <= 0 && hero.top > 0){
+            else if(this.left <= 0 && this.top > 0){
                 this.top -=100;
                 console.log('ok3: ' + this.top + "left3" + this.left);
             }
