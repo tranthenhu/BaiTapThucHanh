@@ -9,6 +9,8 @@
 <div    id="tenor" ></div>
 <div    id="tenor1" ></div>
 <div    id="tenor2" ></div>
+<div    id="score" style="left: 470px;top: 90px;position: absolute" ></div>
+
 <body>
 <script>
     class Image {
@@ -117,6 +119,14 @@
     });
 
 
+    var scoreup = 0;
+    function score() {
+        scoreup += 1;
+        document.getElementById("score").innerHTML = "Score: " + scoreup;
+    }
+    setInterval(score,500);
+
+
 function move1() {
     var size0 = 0;
     var cartop = Math.floor( car.gettop() / 100);
@@ -128,11 +138,12 @@ function move1() {
         setTimeout(move1, 30);
         document.getElementById("tenor").innerHTML = tenor.getimage();
       } else if (cartop === tenortop && carleft === tenorleft) {
-           alert("THUA ROI")
+           alert("LOSE" + "--" + " score: " + scoreup);
           } else {
               size0 = tenor.getsize();
               document.getElementById("tenor").innerHTML = tenor.getimage(size0);
               tenor.getagain();
+              changespeed();
  }
 }
 
@@ -147,11 +158,12 @@ function move1() {
             setTimeout(move2, 30);
             document.getElementById("tenor1").innerHTML = tenor1.getimage();
         } else if (cartop === tenortop && carleft === tenorleft) {
-            alert("THUA ROI");
+            alert("LOSE" + "--" + " score: " + scoreup);
         } else {
             size0 = tenor1.getsize();
             document.getElementById("tenor1").innerHTML = tenor1.getimage(size0);
             tenor1.getagain1();
+            changespeed1();
         }
     }
 
@@ -166,20 +178,79 @@ function move1() {
             setTimeout(move3, 30);
             document.getElementById("tenor2").innerHTML = tenor2.getimage();
         } else if (cartop === tenortop && carleft === tenorleft) {
-            alert("THUA ROI");
+            alert("LOSE" + "--" + " score: " + scoreup);
         }else {
             size0 = tenor2.getsize();
             document.getElementById("tenor2").innerHTML = tenor2.getimage(size0);
             tenor2.getagain2();
+            changespeed2();
         }
     }
+    var a = 7;
+  function changespeed(){
+    if (scoreup < 10){
+        a = Math.floor( Math.random()*10 + 5);
+    } else if (scoreup < 20 ){
+        a = Math.floor( Math.random()*10 + 3);
+    }  else if (scoreup < 50 ){
+        a = Math.floor( Math.random()*10+2 );
+    } else if (scoreup < 100 ){
+        a = Math.floor( Math.random()*8+2);
+    } else if (scoreup < 200 ){
+        a = Math.floor( Math.random()*6+2);
+    } else if (scoreup < 300 ){
+        a = Math.floor( Math.random()*4+1);
+    }
+      console.log("a= "+a);
+  }
 
-    setInterval(move1,4000);
-    setInterval(move2,7000);
-    setInterval(move3,10000);
+
+
+    var b = 4;
+    function changespeed1(){
+        if (scoreup < 10){
+            b = Math.floor( Math.random()*15 + 5);
+        } else if (scoreup < 20 ){
+            b = Math.floor( Math.random()*10 + 3);
+        }  else if (scoreup < 50 ){
+            b = Math.floor( Math.random()*8+2 );
+        } else if (scoreup < 100 ){
+            b = Math.floor( Math.random()*7+2);
+        } else if (scoreup < 200 ){
+            b = Math.floor( Math.random()*6+2);
+        } else if (scoreup < 300 ){
+            b = Math.floor( Math.random()*4+1);
+        }
+        console.log("b= "+b);
+
+    }
+
+
+    var c = 8;
+    function changespeed2(){
+        if (scoreup < 10){
+            c = Math.floor( Math.random()*15 + 5);
+        } else if (scoreup < 20 ){
+            c = Math.floor( Math.random()*10 + 3);
+        }  else if (scoreup < 50 ){
+            c = Math.floor( Math.random()*8+2 );
+        } else if (scoreup < 100 ){
+            c = Math.floor( Math.random()*7+2);
+        } else if (scoreup < 200 ){
+            c = Math.floor( Math.random()*6+2);
+        } else if (scoreup < 300 ){
+            c = Math.floor( Math.random()*4+1);
+        }
+        console.log("c= "+c);
+
+    }
 
 
 
+    setInterval(move1,a*1000);
+    setInterval(move2,b*1000);
+    setInterval(move3,c*1000);
+    console.log("c= "+c);
 
 
 
