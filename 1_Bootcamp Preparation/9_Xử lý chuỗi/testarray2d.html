@@ -13,6 +13,8 @@
 
 <body>
 <script>
+    var a = 3;
+
     class Image {
         constructor(image, top, left, size, spees) {
             this.image = image;
@@ -144,6 +146,7 @@ function move1() {
               document.getElementById("tenor").innerHTML = tenor.getimage(size0);
               tenor.getagain();
               changespeed();
+
  }
 }
 
@@ -186,22 +189,23 @@ function move1() {
             changespeed2();
         }
     }
-    var a = 7;
+
   function changespeed(){
     if (scoreup < 10){
         a = Math.floor( Math.random()*10 + 5);
     } else if (scoreup < 20 ){
-        a = Math.floor( Math.random()*10 + 3);
+        a = Math.floor( Math.random()*8 + 3);
     }  else if (scoreup < 50 ){
-        a = Math.floor( Math.random()*10+2 );
+        a = Math.floor( Math.random()*6+2 );
     } else if (scoreup < 100 ){
-        a = Math.floor( Math.random()*8+2);
+        a = Math.floor( Math.random()*4+2);
     } else if (scoreup < 200 ){
-        a = Math.floor( Math.random()*6+2);
-    } else if (scoreup < 300 ){
-        a = Math.floor( Math.random()*4+1);
+        a = Math.floor( Math.random()*3+2);
+    } else {
+        a = Math.floor( Math.random()*2+1);
     }
-      console.log("a= "+a);
+      console.log("a= " + a);
+      return a;
   }
 
 
@@ -209,48 +213,48 @@ function move1() {
     var b = 4;
     function changespeed1(){
         if (scoreup < 10){
-            b = Math.floor( Math.random()*15 + 5);
+            b = Math.floor( Math.random()*10 + 5);
         } else if (scoreup < 20 ){
-            b = Math.floor( Math.random()*10 + 3);
+            b = Math.floor( Math.random()*8 + 3);
         }  else if (scoreup < 50 ){
-            b = Math.floor( Math.random()*8+2 );
+            b = Math.floor( Math.random()*6+2 );
         } else if (scoreup < 100 ){
-            b = Math.floor( Math.random()*7+2);
+            b = Math.floor( Math.random()*4+2);
         } else if (scoreup < 200 ){
-            b = Math.floor( Math.random()*6+2);
-        } else if (scoreup < 300 ){
-            b = Math.floor( Math.random()*4+1);
+            b = Math.floor( Math.random()*3+2);
+        } else {
+            b = Math.floor( Math.random()*2+1);
         }
-        console.log("b= "+b);
-
+        console.log("b= " + b);
+        return b;
     }
 
 
     var c = 8;
     function changespeed2(){
         if (scoreup < 10){
-            c = Math.floor( Math.random()*15 + 5);
+            c = Math.floor( Math.random()*10 + 5);
         } else if (scoreup < 20 ){
-            c = Math.floor( Math.random()*10 + 3);
+            c = Math.floor( Math.random()*8 + 3);
         }  else if (scoreup < 50 ){
-            c = Math.floor( Math.random()*8+2 );
+            c = Math.floor( Math.random()*6+2 );
         } else if (scoreup < 100 ){
-            c = Math.floor( Math.random()*7+2);
+            c = Math.floor( Math.random()*4+2);
         } else if (scoreup < 200 ){
-            c = Math.floor( Math.random()*6+2);
-        } else if (scoreup < 300 ){
-            c = Math.floor( Math.random()*4+1);
+            c = Math.floor( Math.random()*3+2);
+        } else  {
+            c = Math.floor( Math.random()*2+1);
         }
-        console.log("c= "+c);
-
+        console.log("c= " + c);
+        return c;
     }
 
 
 
-    setInterval(move1,a*1000);
-    setInterval(move2,b*1000);
-    setInterval(move3,c*1000);
-    console.log("c= "+c);
+    setInterval(move1,changespeed()*1000);
+    setInterval(move2,changespeed1()*1000);
+    setInterval(move3,changespeed2()*1000);
+
 
 
 

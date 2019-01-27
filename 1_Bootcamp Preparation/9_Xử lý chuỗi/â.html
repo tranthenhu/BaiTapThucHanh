@@ -6,12 +6,13 @@
 <script>
 
 
-    function randomNumber() {
-        return Math.random();
-    }
-    setInterval(randomNumber,1000);
-    console.log(randomNumber());
+    var c = 8;
+    function changespeed2(){
+        c = Math.floor( Math.random()*15 + 5);
 
+    }
+ changespeed2();
+    alert(c);
 </script>
 </body>
 </html>
