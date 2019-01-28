@@ -6,11 +6,13 @@
 </head>
 <div    id="way"></div>
 <div    id="car" ></div>
+<div    id="boardscore" ></div>
+<div    id="hackmode" ></div>
 <div    id="tenor" ></div>
 <div    id="tenor1" ></div>
 <div    id="tenor2" ></div>
-<div    id="score" style="left: 470px;top: 90px;position: absolute" ></div>
-
+<div    id="score" style="left: 460px;top: 100px;position: absolute" ></div>
+<div    id="live" style="left: 470px;top: 80px;position: absolute" ></div>
 <body>
 <script>
     var a = 3;
@@ -73,6 +75,11 @@
             this.left = 315;
             this.size = 10;
         }
+        getagain3() {
+            this.top = 200;
+            this.left = 200;
+            this.size = 200;
+        }
 
         movedown1(){
                 this.top += 5;
@@ -98,6 +105,10 @@
       document.getElementById('way').innerHTML =  way.getimage();
     var car = new Image("513063667051528214.gif",500,260,100);
       document.getElementById('car').innerHTML =  car.getimage();
+    var boardscore = new Image("XDZT.gif",22,420,150);
+      document.getElementById('boardscore').innerHTML =  boardscore.getimage();
+    var hackmode = new Image("ha8.gif",200,200,200);
+
 
     var tenor = new Image("423873894810779659.gif",320,280,10);
     var tenor1 = new Image("423873894810779659.gif",320,296,10);
@@ -116,15 +127,51 @@
                 move = car.getright();
                 document.getElementById('car').innerHTML =  car.getimage(move);
                 break;
+            case  38:
+                console.log("aaaaa1 " + boolen);
+                if (live > 0 && boolen===false){
+                    boolen = true;
+                    hackmodeon();
+                    console.log("aaaaa2 " + boolen);
+                    setInterval(setboolen,1500);
+                   live--;
+                }
+                break;
         }
-
     });
 
 
+
+  var boolen = false;
+  function setboolen() {
+      var size = 0;
+      if (boolen === true) {
+          console.log("aaaaa3 " + boolen);
+          boolen = false;
+          console.log("aaaaa4 " + boolen);
+          size = hackmode.getsize();
+          document.getElementById('hackmode').innerHTML =  hackmode.getimage(size);
+          hackmode.getagain3();
+      }
+  }
+
+  function hackmodeon () {
+
+      if (boolen ===true) {
+          document.getElementById('hackmode').innerHTML =  hackmode.getimage();
+      }
+  }
+
+
+   var live = 1;
     var scoreup = 0;
     function score() {
         scoreup += 1;
         document.getElementById("score").innerHTML = "Score: " + scoreup;
+        if (scoreup%100 ===0 ){
+            live++;
+        }
+        document.getElementById("live").innerHTML = "Live: " + live;
     }
     setInterval(score,500);
 
@@ -139,13 +186,13 @@ function move1() {
         tenor.movedown1();
         setTimeout(move1, 30);
         document.getElementById("tenor").innerHTML = tenor.getimage();
-      } else if (cartop === tenortop && carleft === tenorleft) {
+      } else if (cartop === tenortop && carleft === tenorleft && boolen===false) {
            alert("LOSE" + "--" + " score: " + scoreup);
           } else {
               size0 = tenor.getsize();
               document.getElementById("tenor").innerHTML = tenor.getimage(size0);
               tenor.getagain();
-              changespeed();
+
 
  }
 }
@@ -160,13 +207,13 @@ function move1() {
             tenor1.movedown2();
             setTimeout(move2, 30);
             document.getElementById("tenor1").innerHTML = tenor1.getimage();
-        } else if (cartop === tenortop && carleft === tenorleft) {
+        } else if (cartop === tenortop && carleft === tenorleft && boolen===false) {
             alert("LOSE" + "--" + " score: " + scoreup);
         } else {
             size0 = tenor1.getsize();
             document.getElementById("tenor1").innerHTML = tenor1.getimage(size0);
             tenor1.getagain1();
-            changespeed1();
+
         }
     }
 
@@ -180,13 +227,13 @@ function move1() {
             tenor2.movedown3();
             setTimeout(move3, 30);
             document.getElementById("tenor2").innerHTML = tenor2.getimage();
-        } else if (cartop === tenortop && carleft === tenorleft) {
+        } else if (cartop === tenortop && carleft === tenorleft && boolen===false) {
             alert("LOSE" + "--" + " score: " + scoreup);
         }else {
             size0 = tenor2.getsize();
             document.getElementById("tenor2").innerHTML = tenor2.getimage(size0);
             tenor2.getagain2();
-            changespeed2();
+
         }
     }
 
@@ -250,41 +297,22 @@ function move1() {
     }
 
 
-
-    setInterval(move1,changespeed()*1000);
-    setInterval(move2,changespeed1()*1000);
-    setInterval(move3,changespeed2()*1000);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    /* a = Math.floor((Math.random() * 10) + 1);
-     b = Math.floor((Math.random() * 10) + 1);
-     c = Math.floor((Math.random() * 10) + 1);*/
-
-  /*  var random = Math.floor((Math.random()*6)+1);
-    console.log(random);*/
-  /*  function moveRight(){
-        imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+    function laplai1(){
+        setTimeout (move1, changespeed() * 1000);
     }
-    animate = setTimeout(moveRight,20);
-    function stop(){
-        clearTimeout(animate); imgObj.style.left = '0px';
-*/
+    function laplai2(){
+        setTimeout (move2, changespeed1() * 1500);
+    }
+    function laplai3(){
+        setTimeout (move3, changespeed2() * 2000);
+    }
+
+
+    setInterval(laplai1,3500);
+    setInterval(laplai2,3000);
+    setInterval(laplai3,2500);
+
+
 
 </script>
 </body>
