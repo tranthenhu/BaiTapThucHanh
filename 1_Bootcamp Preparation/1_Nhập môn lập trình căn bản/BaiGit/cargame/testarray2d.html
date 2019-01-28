@@ -13,6 +13,8 @@
 <div    id="tenor2" ></div>
 <div    id="score" style="left: 460px;top: 100px;position: absolute" ></div>
 <div    id="live" style="left: 470px;top: 80px;position: absolute" ></div>
+<div    id="start"  onclick="onoff()"></div>
+
 <body>
 <script>
     var a = 3;
@@ -107,6 +109,8 @@
       document.getElementById('car').innerHTML =  car.getimage();
     var boardscore = new Image("XDZT.gif",22,420,150);
       document.getElementById('boardscore').innerHTML =  boardscore.getimage();
+    var stargame = new Image("PZgF.gif",0,250,100);
+      document.getElementById('start').innerHTML =  stargame.getimage();
     var hackmode = new Image("ha8.gif",200,200,200);
 
 
@@ -163,10 +167,12 @@
   }
 
 
-   var live = 1;
-    var scoreup = 0;
+    var live = 1;
+    var scoreup = 1;
     function score() {
-        scoreup += 1;
+        if (on ===true) {
+            scoreup += 1;
+        }
         document.getElementById("score").innerHTML = "Score: " + scoreup;
         if (scoreup%100 ===0 ){
             live++;
@@ -188,12 +194,12 @@ function move1() {
         document.getElementById("tenor").innerHTML = tenor.getimage();
       } else if (cartop === tenortop && carleft === tenorleft && boolen===false) {
            alert("LOSE" + "--" + " score: " + scoreup);
+           live = 1;
+           scoreup = 1;
           } else {
               size0 = tenor.getsize();
               document.getElementById("tenor").innerHTML = tenor.getimage(size0);
               tenor.getagain();
-
-
  }
 }
 
@@ -209,6 +215,8 @@ function move1() {
             document.getElementById("tenor1").innerHTML = tenor1.getimage();
         } else if (cartop === tenortop && carleft === tenorleft && boolen===false) {
             alert("LOSE" + "--" + " score: " + scoreup);
+            live = 1;
+            scoreup = 1;
         } else {
             size0 = tenor1.getsize();
             document.getElementById("tenor1").innerHTML = tenor1.getimage(size0);
@@ -229,6 +237,8 @@ function move1() {
             document.getElementById("tenor2").innerHTML = tenor2.getimage();
         } else if (cartop === tenortop && carleft === tenorleft && boolen===false) {
             alert("LOSE" + "--" + " score: " + scoreup);
+            live = 1;
+            scoreup = 1;
         }else {
             size0 = tenor2.getsize();
             document.getElementById("tenor2").innerHTML = tenor2.getimage(size0);
@@ -297,21 +307,39 @@ function move1() {
     }
 
 
-    function laplai1(){
-        setTimeout (move1, changespeed() * 1000);
-    }
-    function laplai2(){
-        setTimeout (move2, changespeed1() * 1500);
-    }
-    function laplai3(){
-        setTimeout (move3, changespeed2() * 2000);
+    function laplai1() {
+        if (on ===true) {
+            setTimeout(move1, changespeed() * 1000);
+        }
     }
 
+    function laplai2() {
+        if (on === true) {
+            setTimeout(move2, changespeed1() * 1500);
+        }
+    }
+    function laplai3() {
+        if (on === true) {
+            setTimeout(move3, changespeed2() * 2000);
+        }
+    }
 
-    setInterval(laplai1,3500);
-    setInterval(laplai2,3000);
-    setInterval(laplai3,2500);
+    var on = false;
+function onoff(){
+        if (on === false){
+            on = true;
+        } else {
+            on = false;
+        }
 
+    console.log(on);
+        return on;
+}
+
+
+        setInterval(laplai1, 3500);
+        setInterval(laplai2, 3000);
+        setInterval(laplai3, 2500);
 
 
 </script>
