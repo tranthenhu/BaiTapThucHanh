@@ -109,7 +109,7 @@
       document.getElementById('car').innerHTML =  car.getimage();
     var boardscore = new Image("XDZT.gif",22,420,150);
       document.getElementById('boardscore').innerHTML =  boardscore.getimage();
-    var stargame = new Image("PZgF.gif",0,250,80);
+    var stargame = new Image("PZgF.gif",0,0,600);
       document.getElementById('start').innerHTML =  stargame.getimage();
     var hackmode = new Image("ha8.gif",140,260,80);
 
@@ -326,11 +326,13 @@ function move1() {
 
     var on = false;
 function onoff(){
+        var size0 = stargame.getsize();
         if (on === false){
             on = true;
         } else {
             on = false;
         }
+    document.getElementById('start').innerHTML =  stargame.getimage(size0);
 
     console.log(on);
         return on;
