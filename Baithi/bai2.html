@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var array = [10,2,5,6,9,8,7,6,3,4];
+    var index = 2;
+    function tryRemoveFromArray(array,index) {
+            if (index >= 0 && index < array.length) {
+                for ( var i = index ; i < array.length ; i++){
+                    array[i] = array[i+1];
+                    array.unshift();
+                }
+                alert("mang sau khi loai bo phan tu voi vi tri index la: " +array);
+            } else {
+                alert("index k hop le nen mang giu nguyen nhu cu: " + array);
+            }
+        }
+
+    tryRemoveFromArray(array,index);
+</script>
+</body>
+</html>

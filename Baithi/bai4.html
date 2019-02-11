@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<canvas id="myCanvas" width="1270px" height="630px" style="border:1px solid #d3d3d3"></canvas>
+<script>
+
+    class Rectangle {
+         constructor (toadoX,toadoY,width,height,color){
+            this._toadoX = toadoX;
+            this._toadoY = toadoY;
+            this._width = width;
+            this._height = height;
+            this._color = color;
+         }
+
+    render(){
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.fillRect(this._toadoX, this._toadoY, this._width, this._height);
+            ctx.fillStyle = this._color;
+         }
+    }
+
+    var  vehinhchunhat = new Rectangle(10,10,200,100,"#000000");
+    vehinhchunhat.render();
+
+</script>
+</body>
+</html>

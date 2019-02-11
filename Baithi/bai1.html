@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    var mangdiem = [10,2,8,6,4,7,5,3,9,8];
+    var min = mangdiem[0];
+    function findMinScore(mangdiem) {
+        for (var i = 0 ; i < mangdiem.length ; i++){
+            if (min > mangdiem[i] ){
+                min = mangdiem[i];
+            }
+        }
+        return min;
+    }
+
+    findMinScore(mangdiem);
+    alert("gia tri nho nhat trong mang la: " + min);
+</script>
+</body>
+</html>
