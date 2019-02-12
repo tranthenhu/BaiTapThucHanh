@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <div id="hienthigio" ></div>
+    <div id="hienthingay" ></div>
+</head>
+<body>
+<script>
+    function gettime() {
+        var date = new Date();
+        var h = date.getHours();
+        var m = date.getMinutes();
+        var s = date.getSeconds();
+        var ngay = date.getDate();
+        var thang = date.getMonth();
+        var nam = date.getFullYear();
+        var ngaydem = "";
+
+        h = h < 10 ? "0" + h : h;
+        m = m < 10 ? "0" + m : m;
+        s = s < 10 ? "0" + s : s;
+        ngay = ngay < 10 ? "0" + ngay : ngay;
+        thang = thang < 10 ? "0" + thang : thang;
+        ngaydem = h >= 6 && h <= 18 ?"ban ngày" : "ban đêm";
+
+        document.getElementById("hienthigio").innerText = h + "h:" + m + "m:" + s + "s --- " + ngaydem;
+        document.getElementById("hienthingay").innerText = "ngày: " + ngay + " tháng: " + thang + " năm: " + nam ;
+    }
+    setInterval(gettime,1000);
+</script>
+</body>
+</html>
