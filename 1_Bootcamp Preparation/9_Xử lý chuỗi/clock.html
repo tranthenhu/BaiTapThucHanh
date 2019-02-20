@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <canvas id="myCanvas" width="200" height="100"></canvas>
     <div id="hienthigio" ></div>
     <div id="hienthingay" ></div>
 </head>
@@ -25,7 +26,9 @@
         thang = thang < 10 ? "0" + thang : thang;
         ngaydem = h >= 6 && h <= 18 ?"ban ngày" : "ban đêm";
 
-        document.getElementById("hienthigio").innerText = h + "h:" + m + "m:" + s + "s --- " + ngaydem;
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+   ctx.fillText(h + "h:" + m + "m:" + s + "s --- " + ngaydem);
         document.getElementById("hienthingay").innerText = "ngày: " + ngay + " tháng: " + thang + " năm: " + nam ;
     }
     setInterval(gettime,1000);
