@@ -3,9 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <canvas id="myCanvas" width="200" height="100"></canvas>
-    <div id="hienthigio" ></div>
-    <div id="hienthingay" ></div>
+    <canvas id="myCanvas" width="700" height="300" style="border:10px solid #ff0000 "></canvas>
+ 
 </head>
 <body>
 <script>
@@ -25,12 +24,24 @@
         ngay = ngay < 10 ? "0" + ngay : ngay;
         thang = thang < 10 ? "0" + thang : thang;
         ngaydem = h >= 6 && h <= 18 ?"ban ngày" : "ban đêm";
-
+        var ngaygio = h + "h:" + m + "m:" + s + "s";
+        var ngaythang = "ngày: " + ngay + " tháng: " + thang + " năm: " + nam ;
+        console.log (ngaygio);
+        
         var c = document.getElementById("myCanvas");
         var ctx = c.getContext("2d");
-   ctx.fillText(h + "h:" + m + "m:" + s + "s --- " + ngaydem);
-        document.getElementById("hienthingay").innerText = "ngày: " + ngay + " tháng: " + thang + " năm: " + nam ;
+        ctx.clearRect(0,0,1000,1000);
+        ctx.fillStyle = "#020202";
+        ctx.fillRect(0, 0, 700, 300);
+        ctx.font = "50px Arial";
+        ctx.fillStyle = "#4286f4";
+        ctx.fillText( ngaygio,200,100,500);
+        ctx.fillText( ngaythang,100,240,500);
+        ctx.fillText( ngaydem,250,170,500);
+        
     }
+   
+
     setInterval(gettime,1000);
 </script>
 </body>
