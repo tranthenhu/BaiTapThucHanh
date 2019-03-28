@@ -1,0 +1,243 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="col-sm-4"
+            style="background:black; height:100%; font-size: 20px;padding-left: 30px;padding-top: 70px">
+            <ul>
+                <li><button id="commandDraggable">Draggable</button> </li>
+                <li><button id="commandDroppable">Droppable</button> </li>
+                <li><button id="commandResizable"> Resizable</button> </li>
+                <li><button id="commandSelectable">Selectable</button> </li>
+                <li><button id="commandSortable">Sortable</button> </li>
+            </ul>
+            <script>
+                $(document).ready(function () {
+                    $("#commandDraggable").click(function () {
+                        $("#command2").hide();
+                        $("#command1").show();
+                        $("#command3").hide();
+                        $("#command4").hide();
+                        $("#command5").hide();
+                        $("#main").hide();
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $("#commandDroppable").click(function () {
+                        $("#command1").hide();
+                        $("#command2").show();
+                        $("#command3").hide();
+                        $("#command4").hide();
+                        $("#command5").hide();
+                        $("#main").hide();
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $("#commandResizable").click(function () {
+                        $("#command1").hide();
+                        $("#command2").hide();
+                        $("#command3").show();
+                        $("#command4").hide();
+                        $("#command5").hide();
+                        $("#main").hide();
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $("#commandSelectable").click(function () {
+                        $("#command1").hide();
+                        $("#command2").hide();
+                        $("#command3").hide();
+                        $("#command4").show();
+                        $("#command5").hide();
+                        $("#main").hide();
+                    });
+                });
+            </script>
+            <script>
+                $(document).ready(function () {
+                    $("#commandSortable").click(function () {
+                        $("#command1").hide();
+                        $("#command2").hide();
+                        $("#command3").hide();
+                        $("#command4").hide();
+                        $("#command5").show();
+                        $("#main").hide();
+                    });
+                });
+            </script>
+        </div>
+        <div class="col-sm-8" style="background:rgba(185, 170, 199, 0.842); height:100%;">
+            <div id="main" style="width:100%;height:100%;background:rgba(185, 170, 199, 0.842)">
+
+            </div>
+            <div id="command1">
+
+                <script>
+                    $(function () {
+                        $("#draggable").draggable();
+                    });
+                </script>
+                <div id="draggable"
+                    style="width: 150px; height: 150px; padding: 0.5em;background: black ;color: blanchedalmond">
+                    <p>Drag me around</p>
+                </div>
+            </div>
+            <div id="command2">
+
+                <script>
+                    $(function () {
+                        $("#draggable1").draggable();
+                        $("#droppable").droppable({
+                            drop: function (event, ui) {
+                                $(this)
+                                    .addClass("ui-state-highlight")
+                                    .find("p")
+                                    .html("Dropped!");
+                            }
+                        });
+                    });
+                </script>
+                <div id="draggable1" class="ui-widget-content"
+                    style="width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; background: black">
+                    <p>Drag me to my target</p>
+                </div>
+                <div id="droppable" class="ui-widget-header"
+                    style="width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px;background:chocolate">
+                    <p>Drop here</p>
+                </div>
+            </div>
+            <div id="command3">
+
+                <script>
+                    $(function () {
+                        $("#resizable").resizable();
+                    });
+                </script>
+                <div id="resizable" class="ui-widget-content"
+                    style=" width: 150px; height: 150px; padding: 0.5em; background: cornsilk;">
+                    <h3 class="ui-widget-header">Resizable</h3>
+                </div>
+            </div>
+            <div id="command4">
+                <style>
+                    #feedback {
+                        font-size: 1.4em;
+                    }
+
+                    #selectable .ui-selecting {
+                        background: #FECA40;
+                    }
+
+                    #selectable .ui-selected {
+                        background: #F39814;
+                        color: white;
+                    }
+
+                    #selectable {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        width: 60%;
+                    }
+
+                    #selectable li {
+                        margin: 3px;
+                        padding: 0.4em;
+                        font-size: 1.4em;
+                        height: 35px;
+                        background: #F39814;
+                    }
+                </style>
+
+                <script>
+                    $(function () {
+                        $("#selectable").selectable();
+                    });
+                </script>
+                </head>
+
+                <body>
+
+                    <ol id="selectable">
+                        <li class="ui-widget-content">Item 1</li>
+                        <li class="ui-widget-content">Item 2</li>
+                        <li class="ui-widget-content">Item 3</li>
+                        <li class="ui-widget-content">Item 4</li>
+                        <li class="ui-widget-content">Item 5</li>
+                        <li class="ui-widget-content">Item 6</li>
+                        <li class="ui-widget-content">Item 7</li>
+                    </ol>
+
+            </div>
+            <div id="command5">
+                <style>
+                    #sortable {
+                        list-style-type: none;
+                        margin: 0;
+                        padding: 0;
+                        width: 60%;
+                    }
+
+                    #sortable li {
+                        margin: 0 3px 3px 3px;
+                        padding: 0.4em;
+                        padding-left: 1.5em;
+                        font-size: 1.4em;
+                        height: 35px;
+                        background: #F39814;
+                    }
+
+                    #sortable li span {
+                        position: absolute;
+                        margin-left: -1.3em;
+                        margin-top: 10px;
+                    }
+                </style>
+
+                <script>
+                    $(function () {
+                        $("#sortable").sortable();
+                        $("#sortable").disableSelection();
+                    });
+                </script>
+                </head>
+
+                <body>
+
+                    <ul id="sortable">
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+                        <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+                    </ul>
+
+            </div>
+            
+        </div>
+    </div>
+</body>
+
+</html>
