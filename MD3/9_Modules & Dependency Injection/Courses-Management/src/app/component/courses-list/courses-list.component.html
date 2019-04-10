@@ -1,0 +1,34 @@
+<body>
+  <div class="container">
+    <h2>courses management</h2>
+    <button class="btn btn-primary" type="button" routerLink="/courses/add">ADD</button>
+    <table class="table table-striped">
+      <thead>
+        <tr style="font-weight: bold;">
+          <td> ID</td>
+          <td> name</td>
+          <td> description</td>
+          <td> price</td>
+          <td> status</td>
+          <td>action</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr  *ngFor="let item of courses; let i =index">
+          <td> {{i+1}}</td>
+          <td>{{item.name}} </td>
+          <td> {{item.description}}</td>
+          <td> {{item.fee > 0 ? ( item.fee | currency : 'USD' :true):'Free'}}</td>
+          <td>{{item.status ? 'da lam' : 'chua lam'}}</td>
+          <td>
+            <button style="margin-right:1%" class="btn btn-success" type="button" (click)="onDoneCourse(item)">da lam
+              xong </button>
+            <button class="btn btn-danger" type="button" (click)="onDeleteCourse(item.id)">delete </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+
+<!-- [routerLink]="['/courses',item.id,'edit']" -->

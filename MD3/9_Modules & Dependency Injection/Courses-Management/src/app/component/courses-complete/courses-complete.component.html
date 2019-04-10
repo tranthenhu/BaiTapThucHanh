@@ -1,0 +1,32 @@
+<body>
+  <div class="container">
+    <h2>courses management</h2>
+
+    <table class="table table-striped">
+      <thead>
+        <tr style="font-weight: bold;">
+          <td> ID</td>
+          <td> name</td>
+          <td> description</td>
+          <td> price</td>
+          <td> status</td>
+          <td>action</td>
+        </tr>
+      </thead>
+      <tbody >
+        <tr *ngFor="let item of courses; let i =index">
+          <td> {{i+1}}</td>
+          <td>{{item.name}} </td>
+          <td> {{item.description}}</td>
+          <td> {{item.fee > 0 ? ( item.fee | currency : 'USD' :true):'Free'}}</td>
+          <td>{{item.status ? 'da lam' : 'chua lam'}}</td>
+          <td>
+            <button style="margin-right:1%" class="btn btn-success" type="button" (click)="onRestartCourse(item)">lam
+              lai </button>
+            <button class="btn btn-danger" type="button" (click)="onDeleteCourse(item.id)">delete </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>

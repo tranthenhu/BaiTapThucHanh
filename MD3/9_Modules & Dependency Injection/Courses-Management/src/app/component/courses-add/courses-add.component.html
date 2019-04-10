@@ -1,0 +1,59 @@
+<form [formGroup]="courseForm" (ngSubmit)="onAddCourse()" class="row justify-content-md-center">
+  <div class="col-md-8">
+    <div class="form-group row">
+      <label for="example-email-input" class="col-md-2 col-form-label">name:</label>
+      <div class="col-md-10">
+        <input type="text" formControlName="name" id="example-email-input" class="form-control">
+        <span style="font-size:14px" class="label label-danger"
+          *ngIf="courseForm.controls.name.touched && courseForm.hasError('required','name')">
+          name: k dc de trong
+        </span>
+        <span style="font-size:14px" class="label label-danger"
+          *ngIf="courseForm.controls.name.touched && courseForm.hasError('minlength','name')">
+          name: k dc it hon 2 ki tu
+        </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-url-fb" class="col-md-2 col-form-label">description:</label>
+      <div class="col-md-10">
+        <input type="text" id="example-url-fb" class="form-control" formControlName="description">
+        <span style="font-size:14px" class="label label-danger"
+        *ngIf="courseForm.controls.description.touched && courseForm.hasError('required','description')">
+        description: k dc de trong
+      </span>
+      <span style="font-size:14px" class="label label-danger"
+        *ngIf="courseForm.controls.description.touched && courseForm.hasError('maxlength','description')">
+        description: k dc nhieu hon 20 ki tu
+      </span>
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="example-url-twt" class="col-md-2 col-form-label">fee</label>
+      <div class="col-md-10">
+        <input type="number" min="0" id="example-url-twt" class="form-control" formControlName="fee">
+        <span style="font-size:14px" class="label label-danger"
+        *ngIf="courseForm.controls.fee.touched && courseForm.hasError('min','fee')">
+        fee: k dc nho hon 0
+      </span>
+      </div>
+    </div>
+    <!-- <div class="form-group row">
+    <label for="example-url-twt" class="col-md-2 col-form-label">status</label>
+    <div class="col-md-10">
+      <input type="checkbox" id="example-url-twt" class="form-control" [(ngModel)]="course.status" [ngModelOptions]="{standalone: true}">
+    </div>
+  </div> -->
+    <div class="form-group row">
+      <div class="col-md-10 offset-md-2">
+        <button [disabled]="courseForm.invalid" type="submit" class="btn btn-primary">Submit</button>
+      </div>
+    </div>
+  </div>
+</form>
+<pre>
+  {{courseForm.value| json}}
+  </pre>
+<pre>
+  {{ngOnInit | json}}
+  </pre>

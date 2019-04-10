@@ -1,0 +1,20 @@
+<h2>profile</h2>
+<div>
+<input type="text" class="form-input"
+[(ngModel)]="name">
+<input type="number" class="form-input"
+[(ngModel)]="tuoi">
+<input type="email" class="form-input"
+[(ngModel)]="email">
+</div>
+<div>
+  <button class="form-input" (click)="showprofile()">
+  Thực thi
+  </button>
+  </div>
+  <div class="output">
+  <p>ten: {{output[0]}}</p>
+  <p>tuoi: {{output[1]}}</p>
+  <p>email: {{output[2]}}</p>
+  </div>
+ 

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>demo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../tạo layout/layout.css" rel="stylesheet">
+    <script src="jquery.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="1.jpg" />
+</head>
+
+<body>
+    <div class="container">
+        <nav class=" navbar-inverse " style="background-color:rgb(233, 233, 233)">
+            <div class="container-fluid ">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <img src="CodeGym.png" style="width:160px;height:40px;padding-top: 7PX">
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">Lịch khai giảng </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Chương trình</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Khoá học</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Blog</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#"> Tin tức & Sự kiện</a>
+                        </li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right form-inline" style="padding-top: 7PX">
+                        <form>
+                            <input class="form-control " type="text" placeholder="Search">
+                            <button class="btn btn-success " type="submit">Search</button>
+                        </form>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <div class="head">
+            <div class="banner" style="background-image: url('banner.jpg');width:100%;height:350px; padding: 10% 0 0 5%">
+            <h3 style="font-size:30px;color:rgb(0, 4, 218)" ><strong>ĐÀO TẠO LẬP TRÌNH</strong></h3>
+            <h1  style="font-size:60px;color:rgb(0, 4, 218)"><strong>HIỆN ĐẠI</strong></h1>
+                
+            </div>
+            <div class="row" style="margin:2% 0 4% 0 ;background: rgb(66, 60, 60);padding-bottom: 2%">
+                <div class="col-sm-3">
+                    <img src="CodeGym-Logo-small.png" style="width:100%;height:158;padding-top:20px ">
+                </div>
+                <div class="col-sm-9" style="color:white;padding-top: 2%;padding-bottom: 1%">
+                    <p>
+                        CodeGym ra đời với mục tiêu đào tạo những lập trình viên hiện đại, là chủ lực cung cấp nhân lực
+                        chất lượng cao cho ngành công nghiệp, góp phần nâng tầm phát triển ngành phần mềm Việt Nam, tiến
+                        kịp tiêu chuẩn quốc tế.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div style="font-size:30px;text-align: center;margin-bottom: 30px">
+            <strong>
+                Các chương trình đào tạo
+            </strong>
+        </div>
+        <div class="row text-center">
+            <div class="col-sm-4" id="inf1">
+                <div style="width:97%;border:1px solid rgb(233, 233, 233);">
+                    <div style="background: rgb(233, 233, 233) ;">
+                        <p style="padding-top:5%;padding-bottom: 5%">CAREER</p>
+                    </div>
+                    <div>
+                        <p style="padding:2% 10% 10% 10%">Chương trình đào tạo full-stack developer chuyên nghiệp trong
+                            vòng 6 tháng dành cho người học
+                            từ
+                            đầu.</p>
+                        <p id="more1" hidden style="padding:2% 10% 10% 10%">Chương trình đào tạo full-stack developer
+                            chuyên nghiệp trong
+                            vòng 6 tháng dành cho người học
+                            từ
+                            đầu.</p>
+                    </div>
+                    <div class=" center" style="padding-bottom:5%">
+                        <button class="btn btn-primary" id="bt1">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="inf2">
+                <div style="width:97%;border:1px solid rgb(233, 233, 233);">
+                    <div style="background: rgb(233, 233, 233) ;">
+                        <p style="padding-top:5%;padding-bottom: 5%">ACCELERATOR</p>
+                    </div>
+                    <div>
+                        <p style="padding:2% 10% 10% 10%">Chương trình đào tạo nhanh để cập nhật công nghệ mới và những
+                            lĩnh vực có nhu cầu tuyển dụng cao.</p>
+                        <p id="more2" hidden style="padding:2% 10% 10% 10%">Chương trình đào tạo full-stack developer
+                            chuyên nghiệp trong
+                            vòng 6 tháng dành cho người học
+                            từ
+                            đầu.</p>
+                    </div>
+                    <div class=" center" style="padding-bottom:5%">
+                        <button class="btn btn-primary" id="bt2">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4" id="inf3">
+                <div style="width:97%;border:1px solid rgb(233, 233, 233);">
+                    <div style="background: rgb(233, 233, 233) ;">
+                        <p style="padding-top:5%;padding-bottom: 5%">PREMIUM</p>
+                    </div>
+                    <div>
+                        <p style="padding:2% 10% 10% 10%">Chương trình học tập đặc biệt dành cho lập trình viên đam mê
+                            nâng cao tay nghề và trình độ.</p>
+                        <p id="more3" hidden style="padding:2% 10% 10% 10%">Chương trình đào tạo full-stack developer
+                            chuyên nghiệp trong
+                            vòng 6 tháng dành cho người học
+                            từ
+                            đầu.</p>
+                    </div>
+                    <div class=" center" style="padding-bottom:5%">
+                        <button class="btn btn-primary" id="bt3">Tìm hiểu thêm</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row" style="font-size:30px;margin:5% 0% 3% 0;text-align: center">
+            <button class="btn  btn-primary" style="width:200px;height:50px" id="showImage">Hình ảnh hoạt động</button>
+        </div>
+        <div class="row" id="anh" hidden style="padding:2% 1% 2% 1%">
+            <div class="col-sm-4 col-xs-4">
+                <img src="1.jpg" style="width:100%;height:100%">
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <img src="2.jpg" style="width:100%;height:100%">
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <img src="3.jpg" style="width:100%;height:100%">
+            </div>
+        </div>
+        <div class="row" id="anh" hidden style="padding:2% 1% 2% 1%">
+            <div class="col-sm-4 col-xs-4">
+                <img src="4.jpg" style="width:100%;height:100%">
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <img src="5.jpg" style="width:100%;height:100%">
+            </div>
+            <div class="col-sm-4 col-xs-4">
+                <img src="6.jpg" style="width:100%;height:100%">
+            </div>
+        </div>
+        <div class="row" style="font-size:30px;margin:2% 0% 3% 0;text-align: center; text-decoration: underline;">
+            <p>LIÊN HỆ</p>
+        </div>
+        <div class="row" style="margin-bottom:3%;border :10px solid #18048d">
+            <div class="col-sm-6">
+                <img src="address.png" style="width:100%;height:100%">
+            </div>
+            <div class="col-md-6">
+                <h3 class="text-center">Liên hệ tư vấn</h3>
+                <form>
+                    <div class="form-group">
+                        <label>Họ và tên:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Email:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Số điện thoại:</label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label>Nội dung:</label>
+                        <textarea class="form-control"></textarea>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-primary btn-lg">LIÊN HỆ</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="row" style="background-color:#18048d;">
+            <div class="row" style="font-size:27px;color: white;padding: 2% 0 0 3%">
+                <div class="col-sm-3">
+                    <div> GIỚI THIỆU</div>
+                    <a href="#" style="font-size:18px;color: white">Về CodeGym</a>
+                </div>
+                <div class="col-sm-3">
+                    <div>CHƯƠNG TRÌNH</div>
+                    <a href="#" style="font-size:18px;color: white">Career</a></br>
+                    <a href="#" style="font-size:18px;color: white">Premium</a></br>
+                    <a href="#" style="font-size:18px;color: white">Accelerator</a>
+                </div>
+                <div class="col-sm-3">
+                    <div> TÀI NGUYÊN</div>
+                    <a href="#" style="font-size:18px;color: white">Blog</a></br>
+                    <a href="#" style="font-size:18px;color: white">Tạp chí Lập trình</a></br>
+                    <a href="#" style="font-size:18px;color: white">AgileBreackfast</a>
+                </div>
+                <div class="col-sm-3">
+                    <div> CỘNG ĐỒNG</div>
+                    <a href="#" style="font-size:18px;color: white">Fanpage</a></br>
+                    <a href="#" style="font-size:18px;color: white">Sự kiện</a>
+                </div>
+            </div>
+            <div class="row" style="font-size:18px;color: white;text-align: center;margin-top: 2%;padding-bottom: 3%">
+                CodeGym@2018. All rights reserved.
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
