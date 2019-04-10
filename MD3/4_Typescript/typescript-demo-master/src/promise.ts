@@ -13,10 +13,10 @@ function httpGet(url: string): Promise<any> {
     const request = new XMLHttpRequest();
     request.onload = function() {
       if (this.status === 200) {
-        // Success
+
         resolve(this.response);
       } else {
-        // Something went wrong (404 etc.)
+        
         reject(new Error(this.statusText));
       }
     };
@@ -35,7 +35,7 @@ httpGet('https://api.github.com/search/repositories?q=angular').then(
     console.error('Something went wrong', reason);
   }
 );
-// parseJSON
+
 function parseResponse(value: string) {
   try {
     return JSON.parse(value);
@@ -50,18 +50,16 @@ httpGet('https://api.github.com/search/repositories?q=angular')
     console.error('Something went wrong', reason);
   });
 
-// promise chỉ resolve hoặc reject duy nhất 1 lần
+
 const promise = new Promise((resolve, reject) => {
   resolve('done');
-  reject(new Error('…')); // ignored
-  setTimeout(() => resolve('…')); // ignored
+  reject(new Error('…')); 
+  setTimeout(() => resolve('…')); 
 });
 
 promise.then(data => console.log(data));
 
-/**
- * Async/Await
- */
+
 async function f() {
   return 1;
 }
@@ -81,13 +79,13 @@ async function fns() {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => resolve("done!"), 1000)
   });
-  // wait till the promise resolves (*)
+ 
   const result = await promise;
-  console.log(result); // "done!"
+  console.log(result); 
 }
 fns();
 
-// handle error
+
 async function getUser(username: string) {
   try {
     const response = await fetch(
@@ -103,7 +101,7 @@ getUser('bob')
   .catch(err => console.warn(err));
 
 
-// do not combine sync operations with async/await
+
 (() => {
   let x = 0;
   async function r5() {
@@ -117,7 +115,7 @@ getUser('bob')
   })();
 })();
 
-// fixed version
+
 (() => {
   let x = 0;
   async function r5() {
@@ -132,7 +130,7 @@ getUser('bob')
   })();
 })();
 
-// Too Sequential
+
 async function fetchAllBook() {
   await new Promise(resolve => {
     console.log('Waiting 2s...');
@@ -170,7 +168,7 @@ async function getBooksAndAuthor(authorId: string) {
 
 getBooksAndAuthor('author-id-2');
 
-// Too Sequential fixed
+
 async function getBooksAndAuthorFixed(authorId: string) {
   const bookPromise = fetchAllBook();
   const authorPromise = fetchAuthorById(authorId);

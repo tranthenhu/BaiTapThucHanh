@@ -38,9 +38,11 @@ export class CoursesCompleteComponent implements OnInit {
    
   }
 
-  
-  
-
+  onDeleteCourse(id: number) {
+    this.courseService.deleteCourse(id).subscribe((data: Course) => {
+      this.courses = this.courses.filter(t => t.id !== id)
+    });
+  }
 
 
 }

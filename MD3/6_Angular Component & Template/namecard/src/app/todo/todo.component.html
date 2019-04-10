@@ -1,0 +1,19 @@
+<h2 class="text-center">
+    Todo App
+</h2>
+<table class="table table-light" >
+    <tbody>
+        <tr>
+            <td >
+                <div class="col-md-8 offset-md-2" *ngFor="let todo of todos" style="border: 2px solid black">
+                    <ul >
+                        <li> id: {{todo.id}}</li>
+                        <li>  title: {{todo.title}}</li>
+                        <li><a [routerLink] = "['/detail',todo.id]" routerLinkActive="active">View Detail</a></li>
+                        <li><a href="#">edit</a></li>
+                    </ul>
+                </div>
+            </td>
+        </tr>
+    </tbody>
+</table>

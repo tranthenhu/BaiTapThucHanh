@@ -1,14 +1,6 @@
 import "./scss/styles.scss";
-/**
- * Variable and Data type
- */
 
-// tslint:disable
 
-/**
- * var vs let/const
- */
-/*
 function main() {
   console.log("START");
   if (true) {
@@ -20,8 +12,7 @@ function main() {
   console.log(lang);
   console.log(target);
 }
- */
-/*
+
 function main() {
   var x = 5;
   console.log(x);
@@ -33,9 +24,7 @@ function main() {
   let y = 100;
   console.log(y);
 }
-*/
 
-/*
 function main() {
   console.log(x);
   var x = 5;
@@ -43,12 +32,7 @@ function main() {
   console.log(y);
   let y = 10;
 }
- */
 
-/**
- * Data types
- */
-/*
 function main() {
   let message: string;
   let total: number = 100;
@@ -94,10 +78,10 @@ function main() {
     } as IPost;
   }
 }
- */
+
 
 function main() {}
 
-// tslint:enable
+
 
 main();

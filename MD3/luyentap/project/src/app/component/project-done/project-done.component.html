@@ -1,0 +1,41 @@
+<div class="container">
+
+    <div class="row">
+      <div class="col-sm-8">
+        <body>
+         
+            <h2>Project Open</h2>
+            <p></p>
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Stt</th>
+                  <th>title</th>
+                  <th>content</th>
+                  <th>status</th>
+                  <th>finish day</th>
+                  <th>action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr *ngFor="let item of project">
+                  <td>#</td>
+                  <td>{{item.title}}</td>
+                  <td>{{item.content}}</td>
+                  <td>{{item.status}}</td>
+                  <td> {{item.finishDate}}</td>
+                  <th> 
+                    <button  (click)="onRestatProject(item)" class="btn btn-primari" style="margin-right:1%"> Restat</button>
+                   
+                    <button  (click)="onDeleteProject(item.id)" class="btn btn-danger"> Delete</button>
+                  </th>
+                </tr>
+              </tbody>
+            </table>
+      </body>
+      </div>
+      <div class="col-sm-4">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+    

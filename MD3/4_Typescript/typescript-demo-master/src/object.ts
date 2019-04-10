@@ -12,13 +12,9 @@ let customer: IUser = {
 
 console.log(customer);
 
-/* customer = {
+ customer = {
   name: 'Anna'
-}; */
-/*
-* Error: Type '{ name: string; }' is not assignable to type 'IUser'.
-* Property 'age' is missing in type '{ name: string; }'.
-*/
+};
 
 class Shape {
   public x: number;

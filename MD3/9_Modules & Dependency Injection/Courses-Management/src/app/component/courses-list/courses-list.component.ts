@@ -4,15 +4,13 @@ import { Subscription } from 'rxjs';
 import { Course } from './../../model/course.model';
 import { Router, ActivatedRoute, Params } from '@angular/router';
 
-
-
 @Component({
   selector: 'app-courses-list',
   templateUrl: './courses-list.component.html',
   styleUrls: ['./courses-list.component.css']
 })
-export class CoursesListComponent implements OnInit, OnDestroy {
 
+export class CoursesListComponent implements OnInit, OnDestroy {
   public subscription: Subscription;
   public courses: Course[] = [];
 
@@ -38,12 +36,10 @@ export class CoursesListComponent implements OnInit, OnDestroy {
   }
 
   onDoneCourse(item) {
-    
-      item.status = true;
-      this.courseService.updateCourse(item).subscribe((data: Course) => {
-        this.courses = this.courses.filter(t => t.id !== data.id)
-      })
-    
+    item.status = true;
+    this.courseService.updateCourse(item).subscribe((data: Course) => {
+      this.courses = this.courses.filter(t => t.id !== data.id)
+    })
   }
 
   onDeleteCourse(id: number) {
@@ -51,7 +47,4 @@ export class CoursesListComponent implements OnInit, OnDestroy {
       this.courses = this.courses.filter(t => t.id !== id)
     });
   }
-
-
-
 }

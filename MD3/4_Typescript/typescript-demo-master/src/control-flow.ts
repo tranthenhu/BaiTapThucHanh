@@ -1,8 +1,5 @@
 import "./scss/styles.scss";
 
-/**
- * If/else
- */
 
 let count = 50;
 if (count > 0) {
@@ -12,9 +9,7 @@ if (count > 0) {
 }
 console.log(count);
 
-/**
- * loop
- */
+
 
 console.log("for loop");
 

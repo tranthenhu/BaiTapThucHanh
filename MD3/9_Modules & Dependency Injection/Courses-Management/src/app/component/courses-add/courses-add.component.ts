@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 
 export class CoursesAddComponent implements OnInit, OnDestroy {
-  public course: Course;
+
   public subscription: Subscription;
   public courseForm: FormGroup;
 
@@ -27,6 +27,7 @@ export class CoursesAddComponent implements OnInit, OnDestroy {
       name: ['', [Validators.required, Validators.minLength(2)]],
       description: ['', [Validators.required, Validators.maxLength(20)]],
       fee: ['', [Validators.min(0)]],
+      status: [false]
     })
   }
 

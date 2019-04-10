@@ -1,0 +1,39 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-sm-8">
+      <body>
+       
+          <h2>Project Open</h2>
+          <p></p>
+          <table class="table table-hover">
+            <thead>
+              <tr>
+                <th>Stt</th>
+                <th>title</th>
+                <th>content</th>
+                <th>status</th>
+                <th>action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let item of project">
+                <td>#</td>
+                <td>{{item.title}}</td>
+                <td>{{item.content}}</td>
+                <td>{{item.status}}</td>
+                <th> 
+                  <button  (click)="onDoneProject(item)" class="btn btn-primari" style="margin-right:1%"> Done</button>
+                  <button  [routerLink]="['/projectOpen',item.id,'edit']" class="btn btn-success" style="margin-right:1%"> Edit</button>
+                  <button  (click)="onDeleteProject(item.id)" class="btn btn-danger"> Delete</button>
+                </th>
+              </tr>
+            </tbody>
+          </table>
+    </body>
+    </div>
+    <div class="col-sm-4">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+  
