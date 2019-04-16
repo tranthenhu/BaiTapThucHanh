@@ -17,8 +17,8 @@
               </tr>
             </thead>
             <tbody>
-              <tr *ngFor="let item of project">
-                <td>#</td>
+              <tr *ngFor="let item of project; let i =index">
+                <td>{{i+1}}</td>
                 <td>{{item.title}}</td>
                 <td>{{item.content}}</td>
                 <td>{{item.status}}</td>

@@ -20,7 +20,12 @@ export class ProjectOpenComponent implements OnInit {
   constructor(
     public projectService: ProjectService,
     public routerService: Router
-  ) {this.jstoday = formatDate(this.today, 'dd-MM-yyyy hh:mm:ss a', 'en-US', '+0530'); }
+  ) {
+    this.projectService.listen().subscribe(
+      data => this.project.push(data)
+    );
+    this.jstoday = formatDate(this.today, ' hh:mm:ss ( dd-MM-yyyy )', 'en-US', '+0700'); 
+  }
 
   ngOnInit() {
     this.projectService.getAllProject().subscribe((data: Project[]) => {
@@ -31,6 +36,7 @@ export class ProjectOpenComponent implements OnInit {
       }
     });
   }
+  
   onDoneProject(item) {
     item.status = true;
     item.finishDate = this.jstoday;

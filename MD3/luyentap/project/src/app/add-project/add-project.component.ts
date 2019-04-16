@@ -12,19 +12,19 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   templateUrl: './add-project.component.html',
   styleUrls: ['./add-project.component.css']
 })
-export class AddProjectComponent implements OnInit,OnDestroy {
+export class AddProjectComponent implements OnInit, OnDestroy {
 
   public subscription: Subscription;
   public projectForm: FormGroup;
-  
-  
+  public project: Project[] = [];
+
   constructor(
     public projectService: ProjectService,
     public routerService: Router,
     public formBuilder: FormBuilder
   ) { }
 
-  
+
   ngOnInit() {
     this.projectForm = this.formBuilder.group({
       title: ['', [Validators.required, Validators.minLength(2)]],
@@ -35,14 +35,17 @@ export class AddProjectComponent implements OnInit,OnDestroy {
   }
 
   onAddProject() {
-    this.subscription = this.projectService.addProject(this.projectForm.value).subscribe(data => {
-      if (data && data.id) {
-        this.routerService.navigate(['projectOpen']);
-      }
-    });
+    this.subscription = this.projectService
+                        .addProject(this.projectForm.value)
+                        .subscribe(
+                          data => (
+                            this.projectService.trans(data)
+                          )  
+    );
+    this.routerService.navigate(['projectOpen']);
   }
 
-ngOnDestroy(){
+  ngOnDestroy() {
 
-}
+  }
 }
