@@ -35,17 +35,17 @@ export class EditProjectComponent implements OnInit, OnDestroy {
       let id = data['id'];
       this.subscription = this.projectService.getProject(id).subscribe((project: Project) => {
         this.project = project;
-
       })
     });
   }
 
   onEditProject() {
     this.subscriptionParams = this.projectService.updateProject(this.project).subscribe((data: Project) => {
+      this.projectService.trans(data);
       this.routerService.navigate(['projectOpen']);
     });
+    
   }
-
 
   ngOnDestroy() {
 

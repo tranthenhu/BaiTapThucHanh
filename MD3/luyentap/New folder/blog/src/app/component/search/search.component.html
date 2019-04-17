@@ -1,0 +1,38 @@
+<div class="col-sm-9 panel" style="background-color: rgb(73, 73, 73)">
+
+  <body style="border:1px solid;width:98%; padding: 2% 2% 3% 2% ;" class=" panel">
+    <div class="row" style="text-align:center">
+      <h2>new blog</h2>
+    </div>
+    <p></p>
+    <table class="table table-hover panel">
+      <thead style="font-size:20px">
+        <tr>
+          <th>Stt</th>
+          <th>title</th>
+          <th>content</th>
+          <th>status</th>
+          <th>finish day</th>
+          <th  style="text-align:center">action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of blogs; let i =index" >
+          <td><strong>{{i+1}}</strong></td>
+          <td>{{item.title}}</td>
+          <td>{{item.content}}</td>
+          <td>{{item.status ? 'da xong' : 'chua xong'}}</td>
+          <td>{{item.day? item.day : 'chua co ngay hoan thanh' }}</td>
+          <th  style="text-align:center">
+            <button *ngIf="item.status" (click)="restartBlog(item)" class="btn btn-primari" style="margin-right:1%;color: red"> Restart</button>
+          
+            <button *ngIf="!item.status" (click)="onDoneBlog(item)" class="btn btn-primari" style="margin-right:1%"> Done</button>
+            <button [routerLink]="['/edit',item.id]" class="btn btn-success" style="margin-right:1%">
+              Edit</button>
+            <button (click)="onDeleteBlog(item.id)" class="btn btn-danger"> Delete</button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+</div>

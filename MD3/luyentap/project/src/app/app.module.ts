@@ -10,6 +10,7 @@ import { ProjectOpenComponent } from './component/project-open/project-open.comp
 import { ProjectDoneComponent } from './component/project-done/project-done.component';
 import { AddProjectComponent } from './add-project/add-project.component';
 import { EditProjectComponent } from './component/edit-project/edit-project.component';
+import { SearchComponent } from './component/search/search.component';
 
 const projectRouter: Routes = [
   {
@@ -38,7 +39,8 @@ const projectRouter: Routes = [
     ProjectOpenComponent,
     ProjectDoneComponent,
     AddProjectComponent,
-    EditProjectComponent
+    EditProjectComponent,
+    SearchComponent
   ],
   imports: [
     BrowserModule,

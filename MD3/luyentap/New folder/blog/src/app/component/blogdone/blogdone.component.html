@@ -1,0 +1,36 @@
+<div class="container" style="background-color:rgb(73, 73, 73)">
+  <body  style="border:1px solid;width:98%; padding: 2% 2% 3% 2%" class=" panel">
+   
+   <div style="text-align:center">
+      <h2 >Blog Done</h2>
+    </div>
+    <table class="table table-hover" >
+      <thead style="font-size:20px">
+        <tr>
+          <th>Stt</th>
+          <th>title</th>
+          <th>content</th>
+          <th>status</th>  
+         <th  style="text-align:center"> finish day</th>
+          <th  style="text-align:center">action</th>
+       
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of blogs; let i =index">
+          <td ><strong>{{i+1}}</strong></td>
+          <td>{{item.title}}</td>
+          <td>{{item.content}}</td>
+          <td>{{item.status ? 'da xong' : 'chua xong'}}</td>
+          <td  style="text-align:center">{{item.day}}</td>
+          <th  style="text-align:center">
+            <button (click)="restartBlog(item)" class="btn btn-primari" style="margin-right:1%"> restart</button>
+
+            <button (click)="onDeleteBlog(item.id)" class="btn btn-danger"> Delete</button>
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </body>
+
+</div>

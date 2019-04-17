@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Project } from './../../model/project.model'
 import { ProjectService } from './../../service/project.service';
 import { Subscription } from 'rxjs';
-import { Router} from '@angular/router';
-import {formatDate } from '@angular/common';
+import { Router } from '@angular/router';
+import { formatDate } from '@angular/common';
 
 @Component({
   selector: 'app-project-open',
@@ -11,22 +11,40 @@ import {formatDate } from '@angular/common';
   styleUrls: ['./project-open.component.css']
 })
 export class ProjectOpenComponent implements OnInit {
-  today= new Date();
+  today = new Date();
   jstoday = '';
   public subscription: Subscription;
   public project: Project[] = [];
- 
+  public index = -1;
+  //this.project.push(data)
 
   constructor(
     public projectService: ProjectService,
     public routerService: Router
   ) {
     this.projectService.listen().subscribe(
-      data => this.project.push(data)
-    );
-    this.jstoday = formatDate(this.today, ' hh:mm:ss ( dd-MM-yyyy )', 'en-US', '+0700'); 
+      data => {
+        if (this.project.length !== 0) {
+          for (let item of this.project) {
+            this.index += 1;
+            if (data.id === item.id) {
+              this.project.splice(this.index, 1, data);
+              this.index = -1;
+              break;
+            } else if (this.index === (this.project.length - 1)) {
+              this.project.push(data);
+              this.index = -1;
+              break
+            }
+          }
+        } else {
+          this.project.push(data);
+        }
+      });
+    this.jstoday = formatDate(this.today, ' hh:mm:ss ( dd-MM-yyyy )', 'en-US', '+0700');
   }
 
+  
   ngOnInit() {
     this.projectService.getAllProject().subscribe((data: Project[]) => {
       for (let item of data) {
@@ -36,7 +54,7 @@ export class ProjectOpenComponent implements OnInit {
       }
     });
   }
-  
+
   onDoneProject(item) {
     item.status = true;
     item.finishDate = this.jstoday;
@@ -45,7 +63,7 @@ export class ProjectOpenComponent implements OnInit {
     })
   }
 
-  
+
 
   onDeleteProject(id: number) {
     this.projectService.deleteProject(id).subscribe((data: Project) => {
