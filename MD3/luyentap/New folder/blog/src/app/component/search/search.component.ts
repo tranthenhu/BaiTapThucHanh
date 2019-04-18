@@ -29,8 +29,7 @@ export class SearchComponent implements OnInit {
     this.subscriptionParams = this.activatedRouteService.params.subscribe((data: Params) => {
       this.keyword = data['keyword'];
       this.blogService.getAllBlog().subscribe((blog: Blogs[]) => {
-        this.blogs = blog.filter(item => item.title.indexOf(this.keyword) > -1);
-  
+        this.blogs = blog.filter(item => item.title.indexOf(this.keyword) > -1); 
       });
     })
 
