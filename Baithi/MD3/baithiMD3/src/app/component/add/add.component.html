@@ -1,0 +1,60 @@
+<div class="panel col-sm-8"
+  style="background-color: rgb(187, 182, 255) ;border : 1px solid ; padding-top:2%; margin-left: 17%">
+  <form [formGroup]="awesomeForm" (ngSubmit)="onAddAwesome()" class="row justify-content-md-center">
+    <div>
+      <h4 style="text-align:center">Add new blog</h4>
+    </div>
+    <hr>
+    <div class="col-md-12">
+      <div class="form-group row">
+        <label for="example-email-input" style="margin-right:2%" class="col-md-2 col-form-label">title:</label>
+        <div class="col-md-12">
+          <input type="text" formControlName="tag" id="example-email-input" class="form-control"
+            style="margin-bottom:2%">
+          <span style="font-size:14px" class="label label-danger"
+            *ngIf="awesomeForm.controls.tag.touched && awesomeForm.hasError('required','tag')">
+            title: k dc de trong
+          </span>
+          <span style="font-size:14px" class="label label-danger"
+            *ngIf="awesomeForm.controls.tag.touched && awesomeForm.hasError('minlength','tag')">
+            title: k dc it hon 2 ki tu
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="margin-right:2%" for="example-url-fb" class="col-md-2 col-form-label">url:</label>
+        <div class="col-md-12">
+          <input style=" margin-bottom:2%" type="text" id="example-url-fb" class="form-control" formControlName="url">
+          <span style="font-size:14px" class="label label-danger"
+            *ngIf="awesomeForm.controls.url.touched && awesomeForm.hasError('required','url')">
+            url: k dc de trong
+          </span>
+          <span style="font-size:14px" class="label label-danger"
+            *ngIf="awesomeForm.controls.url.touched && awesomeForm.hasError('maxlength','url')">
+            url: k dc nhieu hon 50 ki tu
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label style="margin-right:2%" for="example-url-fb" class="col-md-2 col-form-label">descriptions:</label>
+        <div class="col-md-12">
+          <textarea style="height:150px; margin-bottom:2%" type="text" id="example-url-fb" class="form-control"
+            formControlName="descriptions"></textarea>
+          <span style="font-size:14px" class="label label-danger"
+            *ngIf="awesomeForm.controls.descriptions.touched && awesomeForm.hasError('required','descriptions')">
+            descriptions: k dc de trong
+          </span>
+          <span style="font-size:14px" class="label label-danger"
+            *ngIf="awesomeForm.controls.descriptions.touched && awesomeForm.hasError('maxlength','descriptions')">
+            descriptions: k dc nhieu hon 50 ki tu
+          </span>
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-md-10 offset-md-2">
+          <button [disabled]="awesomeForm.invalid" type="submit" class="btn btn-primary">Add new blog</button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

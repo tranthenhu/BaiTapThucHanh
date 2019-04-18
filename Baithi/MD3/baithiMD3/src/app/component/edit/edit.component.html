@@ -1,0 +1,40 @@
+<div class="container">
+  <div class="row" style="text-align:center;color:white; margin-bottom:3%">
+    <h2>Edit</h2>
+  </div>
+  <div class=" panel" style="background-color: white;width: 70%;margin-left: 15%">
+    <form class="row justify-content-md-center" style="padding:5% 0% 0% 20%;font-size: 20px">
+      <div class="col-md-10">
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label>Tag:</label>
+            <input type="text" id="example-email-input" class="form-control" [(ngModel)]="awesome.tag"
+              [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label>URL:</label>
+            <input type="text" id="example-url-fb" class="form-control" [(ngModel)]="awesome.url"
+              [ngModelOptions]="{standalone: true}">
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12">
+            <label>Descriptions:</label>
+            <textarea style="height:180px" type="text" id="example-email-input" class="form-control"
+              [(ngModel)]="awesome.descriptions" [ngModelOptions]="{standalone: true}"></textarea>
+          </div>
+        </div>
+        <div class="form-group row">
+          <div class="col-md-12 offset-md-2" style="margin-top:10%">
+            <button (click)="onEditAwesome()" type="submit" class="btn btn-primary">Edit</button>
+            <button style="margin-left:2%" (click)="onDeleteAwesome(awesome.id)" class="btn btn-danger"> Delete this
+              awesome</button>
+            <button style="margin-left:2%" class="btn btn-success" routerLink=""> Back to list</button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

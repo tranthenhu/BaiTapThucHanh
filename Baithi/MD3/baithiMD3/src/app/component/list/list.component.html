@@ -1,0 +1,34 @@
+<div class="container">
+  <div class="col-sm-12 panel" style="background-color: rgb(73, 73, 73)">
+    <body style="border:1px solid;width:98%; padding: 2% 2% 3% 2% ;" class=" panel">
+      <div class="row" style="text-align:center">
+        <h2>My Awesome List</h2>
+      </div>
+      <p></p>
+      <table class="table table-hover panel">
+        <thead style="font-size:20px">
+          <tr>
+            <th>Stt</th>
+            <th>Tag</th>
+            <th>URL</th>
+            <th>Descriptions</th>
+            <th style="text-align:center">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of awesome; let i =index">
+            <td><strong>{{i+1}}</strong></td>
+            <td>{{item.tag}}</td>
+            <td>{{item.url}}</td>
+            <td>{{item.descriptions}}</td>
+            <th style="text-align:center">
+              <button [routerLink]="['/edit',item.id]" class="btn btn-success" style="margin-right:2%">
+                Edit</button>
+              <button (click)="onDeleteAwesome(item.id)" class="btn btn-danger"> Delete</button>
+            </th>
+          </tr>
+        </tbody>
+      </table>
+    </body>
+  </div>
+</div>
