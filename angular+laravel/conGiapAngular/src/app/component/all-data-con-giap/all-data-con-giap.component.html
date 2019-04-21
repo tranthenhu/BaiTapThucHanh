@@ -1,0 +1,21 @@
+<div class="case-study-gallery">
+  <h1 class="title">12 Cung Hoàng Đạo</h1>
+  <p>----------------------------------------------------</p>
+  <div class="case-study study1" *ngFor="let item of congiaps; let i =index">
+    <figure>
+      <img class="case-study__img" src="{{item.image}}" alt="" />
+    </figure>
+    <div class="case-study__overlay">
+      <h2 class="case-study__title">{{item.name}}</h2>
+      <a class="case-study__link" routerLink="detail/{{item.id}}">View {{item.name}}</a>
+    </div>
+  </div>
+</div>
+<div class="circle1"></div>
+<div class="circle2"></div>
+<div class="circle3"></div>
+<div class="circle4"></div>
+<div class="circle5"></div>
+<div class="circle6"></div>
+<div class="circle7"></div>
+<div class="circle8"> </div>

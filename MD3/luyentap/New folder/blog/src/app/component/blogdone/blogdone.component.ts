@@ -2,7 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { Blogs } from './../../model/blogs'
 import { BlogService } from './../../service/blog.service';
 import { Subscription } from 'rxjs';
-import { Router } from '@angular/router';
+import { Router, NavigationEnd } from '@angular/router';
+import { ShareService } from './../../service/share.service';
+
 
 @Component({
   selector: 'app-blogdone',
@@ -12,12 +14,26 @@ import { Router } from '@angular/router';
 export class BlogdoneComponent implements OnInit {
   public subscription: Subscription;
   public blogs: Blogs[] = [];
+  public index = -1;
+
   constructor(
-    public blogService : BlogService,
+    public blogService: BlogService,
     public routerService: Router,
-  ) { }
+    private sharedService: ShareService
+  ) {
+    // sharedService.changeEmitted.subscribe(
+    //   text => {
+
+
+    //   });
+  }
 
   ngOnInit() {
+    this.getBlog();
+  }
+
+
+  getBlog() {
     this.blogService.getAllBlog().subscribe((data: Blogs[]) => {
       for (let item of data) {
         if (item.status) {
