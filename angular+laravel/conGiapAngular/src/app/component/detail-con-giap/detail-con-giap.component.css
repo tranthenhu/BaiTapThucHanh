@@ -19,7 +19,7 @@ body {
   }
   
   .container {
-    margin: 90px auto 300px auto;
+    margin: 20px auto 300px auto;
     position: relative;
    
   }
@@ -49,15 +49,21 @@ body {
     height: auto;
     padding: 30px;
     border-radius: 10px;
-    margin: 80px auto 50px auto;
-    background-color: white;
+    margin: 20px auto 50px auto;
+    
     animation: card-ani1 1s;
     transition-delay: 1s;
     transition-timing-function: easeOutCirc;
     position: relative;
+   
+
+      background: -moz-linear-gradient(-45deg, #c3a3ff 32%, #7091ff 68%);
+      background: -webkit-linear-gradient(-45deg, #c3a3ff 32%, #7091ff 68%);
+      background: linear-gradient(135deg, #c3a3ff 32%, #7091ff 68%);
+    
   }
   .container .card .name {
-    font-size: 28px;
+    
     margin: 15px auto 0px auto;
     animation: card-ani2 1s;
     animation-delay: 0s;
@@ -346,7 +352,7 @@ body {
     letter-spacing: 1px;
   color: #fff;
   text-align: center;
-  background: rgba(30, 144, 255, 0.6);
+  background-image: url('https://media3.giphy.com/media/ZzyOiywrAjnXi/giphy.gif?cid=790b76115cbea1df78657a5777da1fb4');
   border-radius: 50%;
   animation: shadow-pulse 1s infinite;
 }
@@ -372,5 +378,22 @@ body {
   }
   100% {
     box-shadow: 0 0 0 70px rgba(0, 0, 0, 0);
+  }
+}
+#text {
+  text-align: center;
+  font-family: 'Oswald';
+  font-weight: 100;
+  font-size : 4rem;
+  letter-spacing: 5px;
+  background: linear-gradient(rgba(248, 4, 195, 0), rgb(255, 0, 0), rgba(253, 2, 232, 0));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 0;
+  text-decoration: underline;
+}
+@media screen and (min-width: 37.5em) {
+  .title {
+    font-size: 4.75rem;
   }
 }

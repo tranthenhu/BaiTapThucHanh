@@ -53,7 +53,8 @@ ul.language li a{
     background-color: #ff0000;
 }
 .social-network a.icoFacebook:hover {
-    background-color:#3B5998;
+    background-color:rgb(25, 0, 255);
+ 
 }
 .social-network a.icoTwitter:hover {
     background-color:#33ccff;
@@ -109,3 +110,21 @@ a.socialIcon:hover, .socialHoverClass {
     -ms-transition: all 0.8s;
     transition: all 0.8s;
 }
+
+#body {
+
+    background: -moz-linear-gradient(-45deg, #ffe0e3 32%, #a7e0e5 68%);
+    background: -webkit-linear-gradient(-45deg, #ffe0e3 32%, #a7e0e5 68%);
+    background: linear-gradient(135deg, #ffe0e3 32%, #a7e0e5 68%);
+  }
+  #nav {
+ 
+   background-image: url('https://media.giphy.com/media/ygAaR0n5RsyAM/giphy.gif')
+  }
+
+  #checkCung{
+ width:70%;
+ margin-left:10%;
+ color:white;
+    background-image: url('https://media.giphy.com/media/OK5LK5zLFfdm/giphy.gif')
+  }

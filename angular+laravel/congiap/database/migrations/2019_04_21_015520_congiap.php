@@ -18,7 +18,6 @@ class Congiap extends Migration
             $table->string('name');
             $table->string('detail');
             $table->string('image');
-
             $table->timestamps();
         });
     }

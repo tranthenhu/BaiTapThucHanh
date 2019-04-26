@@ -1,37 +1,140 @@
-<div class="container" style="border: 3px solid black">
-    <div class="row" style="background-color: #242424; height: 120px">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-md-2 col-sm-12  socialMedia">
-                    <ul class="social-network social-circle">
-                        <li><a href="#" class="icoFacebook" title="Facebook"><i class="fa fa-facebook"></i></a></li>
-                        <li><a href="#" class="icoTwitter" title="Twitter"><i class="fa fa-twitter"></i></a></li>
-                        <li><a href="#" class="icoLinkedin" title="Linkedin"><i class="fa fa-instagram"></i></a></li>
-                        <li><a href="#" class="icoYoutube" title="Youtube"><i class="fa fa-youtube"></i></a></li>
-                    </ul>
-
-                    <ul class="language">
-                        <li><a href="#" class="arabic">عربي</a></li>
-                        <li><a href="#">|</a></li>
-                        <li><a href="#" class="kurdish">کوردی</a></li>
-                        <li><a href="#">|</a></li>
-                        <li><a href="#" class="kurdish">English</a></li>
-                    </ul>
+<div class="col-sm-12" style="border: 3px solid black">
+        <div class="row" id='nav' style="height: 100px">
+                <div class="container-fluid">
+                        <div class="row">
+                                <div class="col-md-10 col-sm-12  socialMedia">
+                                        <ul class="social-network social-circle">
+                                                <li class="icoFacebook"><a routerLink="detail/2"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Bạch Dương - Aries">♈</a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/3"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Kim Ngưu - Taurus">♉</a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/4"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Song Tử - Gemini">♊</a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/5"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Cự Giải - Cancer">♋ </a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/6"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Sư Tử - Leo">♌</a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/7"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Xử Nữ - Virgo">♍</a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/8"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Thiên Bình - Libra">♎ </a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/9"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Hổ Cáp - Scorpio">♏ </a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/10"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title="Nhân Mã - Sagittarius">♐ </a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/11"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title=" Ma Kết - Capricorn">♑ </a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/12"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title=" Bảo Bình - Aquarius">♒ </a></li>
+                                                <li class="icoFacebook"><a routerLink="detail/1"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title=" Song Ngư - Pisces">♓ </a></li>
+                                                <li class="icoFacebook"><a data-toggle="modal" data-target="#myModal"
+                                                                style="padding-top:5px;margin-right:1%"
+                                                                title=" search"><span
+                                                                        class="glyphicon glyphicon-search"></span> </a>
+                                                </li>
+                                        </ul>
+                                </div>
+                                <div class="col-md-2 col-sm-8 col-xs-2 text-right " id="title">
+                                        <a routerLink="">
+                                                <img src="https://app.sulicourt.com/images/cis-logo.svg" alt="logo"
+                                                        class="img img-responsive" width="50%" id="logo">
+                                        </a>
+                                </div>
+                        </div>
                 </div>
-
-                <div class="col-md-8 col-sm-8 col-xs-2 text-right " id="title">
-                    <h2 class="align-middle"><a  style="color: #B79D49; margin-top: 40px" routerLink="">12 Cung Hoàng Đạo</a></h2>
-                </div>
-                <div class="col-md-2 col-sm-2 col-xs-2">
-                    <img src="https://app.sulicourt.com/images/cis-logo.svg" alt="logo" class="img img-responsive"
-                        width="50%" id="logo">
-                </div>
-            </div>
         </div>
-    </div>
-    <div class="row" style="background-color:#818181">
-        <div class="row" style="margin-top:5%">
-            <router-outlet></router-outlet>
+        <div class="row" id=body style="background-color:#818181">
+                <div class="row" style="margin-top:1%">
+                        <router-outlet></router-outlet>
+                </div>
         </div>
-    </div>
+</div>
+<div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog">
+                <div id="checkCung" class="modal-content">
+                        <div class="modal-header">
+                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                <h4 class="modal-title">kiểm tra cung hoàng đạo</h4>
+                        </div>
+                        <div class="modal-body">
+
+                                <form [formGroup]="congiapForm" (ngSubmit)="check()"
+                                        class="row justify-content-md-center">
+                                        <div class="col-md-12">
+                                                <div class="form-group row">
+                                                        <label for="example-email-input" style="margin-right:2%"
+                                                                class="col-md-12 col-form-label">ngày sinh:</label>
+                                                        <div class="col-md-12">
+                                                                <input type="number" formControlName="day"
+                                                                        id="example-email-input" class="form-control"
+                                                                        style="margin-bottom:2%">
+                                                                <span style="font-size:14px" class="label label-danger"
+                                                                        *ngIf="congiapForm.controls.day.touched && congiapForm.hasError('required','day')">
+                                                                        này k đc để trống
+                                                                </span>
+                                                                <span style="font-size:14px" class="label label-danger"
+                                                                        *ngIf="congiapForm.controls.day.touched && congiapForm.hasError('min','day')">
+                                                                        ngày k đc nhỏ hơn 1
+                                                                </span>
+                                                                <span style="font-size:14px" class="label label-danger"
+                                                                        *ngIf="congiapForm.controls.day.touched && congiapForm.hasError('max','day')">
+                                                                        ngày k đc lớn hơn 31
+                                                                </span>
+                                                        </div>
+                                                </div>
+                                                <div class="form-group row">
+                                                        <label style="margin-right:2%" for="example-url-fb"
+                                                                class="col-md-12 col-form-label">tháng sinh:</label>
+                                                        <div class="col-md-12">
+                                                                <input style=" margin-bottom:2%" type="number"
+                                                                        id="example-url-fb" class="form-control"
+                                                                        formControlName="month">
+                                                                <span style="font-size:14px" class="label label-danger"
+                                                                        *ngIf="congiapForm.controls.month.touched && congiapForm.hasError('required','month')">
+                                                                        tháng k đc để trống
+                                                                </span>
+                                                                <span style="font-size:14px" class="label label-danger"
+                                                                        *ngIf="congiapForm.controls.month.touched && congiapForm.hasError('min','month')">
+                                                                        tháng k đc nhỏ hơn 1
+                                                                </span>
+                                                                <span style="font-size:14px" class="label label-danger"
+                                                                        *ngIf="congiapForm.controls.month.touched && congiapForm.hasError('max','month')">
+                                                                        tháng k đc lớn hơn 12
+                                                                </span>
+                                                        </div>
+                                                </div>
+
+                                                <div class="form-group row">
+                                                        <div class="col-md-10 offset-md-2">
+                                                                <button [disabled]="congiapForm.invalid" type="submit"
+                                                                        class="btn btn-primary">Check</button>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </form>
+                        </div>
+                        <div>
+
+                                <h3>cung của bạn là: {{cung}}</h3>
+                                <a routerLink="detail/{{idCung}}">( chi tiet )</a>
+                        </div>
+                        <div class="modal-footer">
+                                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        </div>
+                </div>
+
+        </div>
 </div>
